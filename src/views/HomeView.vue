@@ -1,5 +1,8 @@
-<script setup></script>
-
+<script setup>
+import CategoryOffer from '@/components/modules/CategoryOffer.vue'
+</script>
 <template>
-  <main></main>
+  <main>
+    <CategoryOffer />
+  </main>
 </template>

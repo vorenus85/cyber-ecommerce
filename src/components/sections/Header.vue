@@ -1,18 +1,15 @@
 <script setup>
-import { RouterLink } from 'vue-router'
+import Logo from '@/components/modules/Logo.vue'
+import HeaderLinks from '@/components/modules/HeaderLinks.vue'
 </script>
 <template>
-  <header class="container mx-auto">
-    <RouterLink to="/"
-      ><img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125"
-    /></RouterLink>
-
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/">Contact us</RouterLink>
-      <RouterLink to="/">Blog</RouterLink>
-    </nav>
+  <header class="container mx-auto header-module">
+    <Logo />
+    <HeaderLinks />
   </header>
 </template>
-<style scoped></style>
+<style>
+.header-module .logo {
+  color: #000;
+}
+</style>

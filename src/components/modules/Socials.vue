@@ -5,10 +5,17 @@ import IconInstagram from '@/components/icons/social/IconInstagram.vue'
 import IconTikTok from '@/components/icons/social/IconTikTok.vue'
 </script>
 <template>
-  <div class="social-module">
-    <a href="#"><IconTwitter /></a>
-    <a href="#"><IconFaceBook /></a>
-    <a href="#"><IconTikTok /></a>
-    <a href="#"><IconInstagram /></a>
+  <div class="social-module module">
+    <a href="#" class="social-link"><IconTwitter /></a>
+    <a href="#" class="social-link"><IconFaceBook /></a>
+    <a href="#" class="social-link"><IconTikTok /></a>
+    <a href="#" class="social-link"><IconInstagram /></a>
   </div>
 </template>
+<style scoped>
+.social-module {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+</style>
