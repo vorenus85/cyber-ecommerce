@@ -31,9 +31,18 @@ const categoryItems = ref([
 ])
 </script>
 <style scoped>
+/* TODO do not render category menu under 992px */
 .category-menu {
+  display: none;
   background: var(--vt-c-black-soft);
 }
+
+@media (min-width: 992px) {
+  .category-menu {
+    display: block;
+  }
+}
+
 .category-menu-container {
   padding: 8px 0;
 }
