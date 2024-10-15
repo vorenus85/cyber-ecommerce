@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ContactView from '@/views/ContactView.vue'
 import HomeView from '@/views/HomeView.vue'
 import BlogView from '@/views/BlogView.vue'
-import StyleGuideView from '@/views/StyleGuideView.vue'
+import ProductView from '@/views/ProductView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,11 +13,6 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/style-guide',
-      name: 'styleGuide',
-      component: StyleGuideView
-    },
-    {
       path: '/contact-us',
       name: 'contact',
       component: ContactView
@@ -26,6 +21,11 @@ const router = createRouter({
       path: '/blog',
       name: 'blog',
       component: BlogView
+    },
+    {
+      path: '/product-page',
+      name: 'productPage',
+      component: ProductView
     },
     {
       path: '/about',

@@ -28,7 +28,7 @@ const assistanceMenus = ref([
   <section class="footer">
     <div class="container mx-auto">
       <div class="footer-rows grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="footer-column footer-column-1">
+        <div class="footer-column footer-column-1 pr-10">
           <FooterCustom />
         </div>
         <div class="footer-column footer-column-2">
