@@ -4,13 +4,8 @@
       <div class="module-head">
         <h3 class="module-head-title">Browse By Category</h3>
       </div>
-      <div class="category-offer-list flex justify-between align-center module-body gap-8">
-        <a
-          href="#"
-          v-for="category in categoryItems"
-          :key="category.id"
-          class="category-menu-item flex-1"
-        >
+      <div class="category-offer-list justify-between align-center module-body">
+        <a href="#" v-for="category in categoryItems" :key="category.id" class="category-menu-item">
           <div href="/" class="category-offer-box flex flex-col items-center">
             <component class="category-offer-img" :is="category.icon"></component
             ><span class="category-offer-name">{{ category.name }}</span>
@@ -42,8 +37,13 @@ const categoryItems = ref([
 .category-menu-item {
   padding: 1.5rem 1rem;
   border-radius: 15px;
-  background: #ededed;
+  background: var(--card-background);
+  transition: var(--transition);
   color: #000;
+}
+
+.category-menu-item:hover {
+  background: var(--card-hover-background);
 }
 
 .category-offer-name {
@@ -59,5 +59,29 @@ const categoryItems = ref([
   width: 100%;
   height: 100%;
   gap: 8px;
+}
+
+.category-offer-list:not(.slider) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.category-offer {
+  padding: 1rem;
+}
+
+@media (min-width: 992px) {
+  .category-offer-list:not(.slider) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .category-offer-list:not(.slider) {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+  }
 }
 </style>
