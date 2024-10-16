@@ -5,7 +5,7 @@ import SearchInput from '@/components/modules/SearchInput.vue'
 import HeaderIcons from '@/components/modules/HeaderIcons.vue'
 </script>
 <template>
-  <header class="container mx-auto header-module">
+  <header class="container header-module">
     <Logo />
     <SearchInput />
     <HeaderLinks />

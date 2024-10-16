@@ -26,7 +26,7 @@ const assistanceMenus = ref([
 </script>
 <template>
   <section class="footer">
-    <div class="container mx-auto">
+    <div class="container">
       <div class="footer-rows grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="footer-column footer-column-1 pr-10">
           <FooterCustom />

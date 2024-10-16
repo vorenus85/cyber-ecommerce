@@ -1,6 +1,6 @@
 <template>
   <section class="category-offer">
-    <div class="category-offer-module module container mx-auto">
+    <div class="category-offer-module module container">
       <div class="module-head">
         <h3 class="module-head-title">Browse By Category</h3>
       </div>
@@ -65,10 +65,6 @@ const categoryItems = ref([
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-}
-
-.category-offer {
-  padding: 1rem;
 }
 
 @media (min-width: 992px) {

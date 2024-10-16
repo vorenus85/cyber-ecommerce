@@ -1,5 +1,5 @@
 <template>
-  <div class="product-accordions container mx-auto">
+  <div class="product-accordions container">
     <ProductModule :error="error" :loading="loading" :products="products" />
   </div>
 </template>

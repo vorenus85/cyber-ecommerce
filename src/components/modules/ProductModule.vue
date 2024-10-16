@@ -7,6 +7,7 @@
         v-for="item in products"
         :key="item.id"
         :id="item.id"
+        :image_thumb="item.image_thumb"
         :title="item.title"
         :price="item.price"
       />
@@ -25,11 +26,11 @@ defineProps({
 <style scoped>
 .product-module .products {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .product-module .products {
     grid-template-columns: repeat(4, 1fr);
   }
