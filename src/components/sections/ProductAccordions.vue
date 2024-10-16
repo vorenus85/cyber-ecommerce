@@ -5,7 +5,6 @@
 </template>
 <script>
 import { ref, onMounted } from 'vue'
-import staticProducts from '/static/products.json'
 import ProductModule from '@/components/modules/ProductModule.vue'
 export default {
   components: { ProductModule },
@@ -16,9 +15,12 @@ export default {
 
     const fetchProducts = async () => {
       try {
-        setTimeout(() => {
-          products.value = staticProducts.slice(0, 8)
-        }, 500)
+        const response = await fetch(import.meta.env.VITE_PRODUCTS_ENDPOINT)
+        if (!response.ok) {
+          throw new Error('Failed to load products')
+        }
+        const data = await response.json()
+        products.value = data.slice(0, 8)
       } catch (err) {
         error.value = err.message
       } finally {

@@ -15,6 +15,7 @@ coverage
 *.local
 
 /figma
+.env
 
 /cypress/videos/
 /cypress/screenshots/
