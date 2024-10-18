@@ -62,6 +62,55 @@
       "price": 1437,
       "image": "iphone_14_pro_gold_640x640.png",
       "image_thumb": "iphone_14_pro_gold_160x160.png"
+    },
+    {
+      "id": 10,
+      "title": "Apple iPhone 14 Pro 1TB Gold (MQ2V3)",
+      "price": 1499,
+      "image": "iphone_14_pro_gold_mq2v3_640_640.png",
+      "image_thumb": "iphone_14_pro_gold_mq2v3_160x160.png"
+    },
+    {
+      "id": 10,
+      "title": "Apple iPhone 14 Pro 1TB Gold (MQ2V3)",
+      "price": 1499,
+      "image": "iphone_14_pro_gold_mq2v3_640_640.png",
+      "image_thumb": "iphone_14_pro_gold_mq2v3_160x160.png"
+    },
+    {
+      "id": 11,
+      "title": "Apple iPhone 11 128GB White (MQ233)",
+      "price": 510,
+      "image": "apple_iphone_11_mq233_640x640.png",
+      "image_thumb": "apple_iphone_11_mq233_160x160.png"
+    },
+    {
+      "id": 12,
+      "title": "Apple iPhone 14 Pro 128GB Deep Purple (MQ0G3)",
+      "price": 1600,
+      "image": "apple_iphone_14_pro_mq063_640x640.png",
+      "image_thumb": "apple_iphone_14_pro_mq063_160x160.png"
+    },
+    {
+      "id": 13,
+      "title": "Apple iPhone 13 mini 128GB Pink (MLK23)",
+      "price": 850,
+      "image": "apple_iphone_13_mini__mlk23_640x640.png",
+      "image_thumb": "apple_iphone_13_mini__mlk23_160x160.png"
+    },
+    {
+      "id": 14,
+      "title": "Apple iPhone 14 Pro 256GB Space Black (MQ0T3)",
+      "price": 1399,
+      "image": "apple_iphone_14_pro_mq0t3_640x640.png",
+      "image_thumb": "apple_iphone_14_pro_mq0t3_160x160.png"
+    },
+    {
+      "id": 15,
+      "title": "Apple iPhone 14 Pro 256GB Silver (MQ103)",
+      "price": 1399,
+      "image": "iphone_14_pro_silver_mq103_640x640.png",
+      "image_thumb": "iphone_14_pro_silver_mq103_160x160.png"
     }
   ]
 }
