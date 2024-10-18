@@ -32,28 +32,13 @@ function onAddToCart(id) {
   <div class="product-card">
     <ProductFavorite @toggle-favorite="onToggleFavorite(id)" />
     <ProductImage :image_thumb="image_thumb" :title="title" />
-    <div class="product-card-body">
+    <div class="product-card-body w-full">
       <ProductName :title="title" />
       <ProductPrice :price="price" />
       <ProductAddToCart @add-to-cart="onAddToCart(id)" />
     </div>
   </div>
 </template>
-<style scoped>
-.product-card {
-  border-radius: 9px;
-  background: #f6f6f6;
-  display: flex;
-  padding: 24px 16px;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-</style>
 <style>
-.product-card-body {
-  gap: 16px;
-  display: flex;
-  flex-direction: column;
-}
+@import '@/assets/css/productCard/productCard.css';
 </style>

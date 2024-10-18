@@ -9,7 +9,12 @@ import ProductModule from '@/components/modules/ProductModule.vue'
 export default {
   components: { ProductModule },
   setup() {
-    const products = ref([])
+    const limit = 8
+    const products = ref(
+      Array(limit)
+        .fill()
+        .map(() => [])
+    )
     const loading = ref(true)
     const error = ref(null)
 
@@ -20,7 +25,7 @@ export default {
           throw new Error('Failed to load products')
         }
         const data = await response.json()
-        products.value = data.slice(0, 8)
+        products.value = data.slice(0, limit)
       } catch (err) {
         error.value = err.message
       } finally {
