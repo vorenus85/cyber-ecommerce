@@ -1,5 +1,9 @@
 <template>
-  <div class="container">
-    <h1>Under Construction</h1>
+  <div class="container py-16">
+    <h1 class="page-head-title">Blog</h1>
+    <UnderConstruction />
   </div>
 </template>
+<script setup>
+import UnderConstruction from '@/components/modules/UnderConstruction.vue'
+</script>

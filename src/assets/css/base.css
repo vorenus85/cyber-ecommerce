@@ -136,5 +136,12 @@ a:hover {
   width: 100%;
 }
 
+.page-head-title {
+  color: #000;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px; /* 100% */
+}
+
 @media (min-height: 992px) {
 }

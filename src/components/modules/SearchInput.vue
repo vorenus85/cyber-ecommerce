@@ -22,6 +22,7 @@ import iconSearch from '@/components/icons/commons/iconSearch.vue'
 
 @media (min-width: 992px) {
   .search-input-module {
+    display: block;
     width: 250px;
   }
 }
