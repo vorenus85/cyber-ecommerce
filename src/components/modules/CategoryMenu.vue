@@ -1,6 +1,6 @@
 <template>
   <div class="category-menu">
-    <div class="container category-menu-container mx-auto">
+    <div class="container category-menu-container mx-auto pt-2 pb-2">
       <ul class="category-menu-list flex justify-between align-center">
         <li v-for="category in categoryItems" :key="category.id" class="category-menu-item">
           <a href="/" class="category-menu-link flex gap-2"
@@ -41,10 +41,6 @@ const categoryItems = ref([
   .category-menu {
     display: block;
   }
-}
-
-.category-menu-container {
-  padding: 8px 0;
 }
 .category-menu-link {
   color: #fff;

@@ -34,6 +34,11 @@ const categoryItems = ref([
 ])
 </script>
 <style scoped>
+.category-offer {
+  padding: 64px 0;
+  background: #fafafa;
+}
+
 .category-menu-item {
   padding: 1.5rem 1rem;
   border-radius: 15px;

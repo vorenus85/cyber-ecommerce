@@ -17,7 +17,13 @@ import iconSearch from '@/components/icons/commons/iconSearch.vue'
 </script>
 <style scoped>
 .search-input-module {
-  width: 250px;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .search-input-module {
+    width: 250px;
+  }
 }
 
 @media (min-width: 1200px) {

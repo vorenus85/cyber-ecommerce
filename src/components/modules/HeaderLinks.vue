@@ -11,13 +11,13 @@ import { RouterLink } from 'vue-router'
 </template>
 <style scoped>
 .header-links {
-  display: flex;
-  gap: 20px;
+  display: none;
 }
 
 @media (min-width: 992px) {
   .header-links {
-    gap: 35px;
+    display: flex;
+    gap: 20px;
   }
 }
 
