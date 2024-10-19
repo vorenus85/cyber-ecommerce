@@ -16,6 +16,10 @@ defineProps({
 })
 </script>
 <style>
+.product-price-container {
+  margin-top: auto;
+}
+
 .product-price {
   text-align: center;
   font-size: 24px;
@@ -34,6 +38,6 @@ defineProps({
   line-height: 24px; /* 100% */
   letter-spacing: 0.72px;
   text-decoration: line-through;
-  color: #e5e7eb;
+  color: #919191;
 }
 </style>

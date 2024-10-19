@@ -12,7 +12,7 @@ defineProps({
 function getImageUrl(name) {
   const localhost = new URL(import.meta.url)
   const appUrl = localhost.origin
-  const imageUrl = new URL(`${import.meta.env.VITE_BASE_URL}/images/${name}`, appUrl)
+  const imageUrl = new URL(`${import.meta.env.VITE_BASE_URL}/images/products/${name}`, appUrl)
 
   return imageUrl.href
 }
