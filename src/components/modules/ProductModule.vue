@@ -12,6 +12,7 @@
         :image_thumb="item.image_thumb"
         :title="item.title"
         :price="item.price"
+        :discountedPrice="item?.discounted_price"
       />
     </div>
   </div>

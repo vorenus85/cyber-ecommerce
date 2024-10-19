@@ -18,6 +18,7 @@
       "id": 3,
       "title": "Apple Watch Series 9 GPS 41mm Starlight Aluminium Case",
       "price": 399,
+      "discounted_price": 250,
       "image": "apple_watch_series_9_640x640.png",
       "image_thumb": "apple_watch_series_9_160x160.png"
     },
@@ -25,6 +26,7 @@
       "id": 4,
       "title": "AirPods Max Silver",
       "price": 549,
+      "discounted_price": 425,
       "image": "airpods_max_silver_640x640.png",
       "image_thumb": "airpods_max_silver_160x160.png"
     },
@@ -32,6 +34,7 @@
       "id": 5,
       "title": "Samsung Galaxy Watch6 Classic 47mm Black",
       "price": 369,
+      "discounted_price": 200,
       "image": "samsung_galaxy_watch_6_classic_640x640.png",
       "image_thumb": "samsung_galaxy_watch_6_classic_160x160.png"
     },
@@ -39,6 +42,7 @@
       "id": 6,
       "title": "Galaxy Z Fold5 Unlocked | 256GB | Phantom Black",
       "price": 1799,
+      "discounted_price": 1500,
       "image": "galaxy_z_fold5_640x640.png",
       "image_thumb": "galaxy_z_fold5_160x160.png"
     },

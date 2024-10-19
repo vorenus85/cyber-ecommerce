@@ -30,6 +30,7 @@ export default {
   components: { ProductModule },
   setup() {
     const limit = 8
+    // for skeleton product cards
     const products = ref(
       Array(limit)
         .fill()

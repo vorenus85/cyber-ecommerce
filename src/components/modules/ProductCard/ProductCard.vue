@@ -17,6 +17,9 @@ defineProps({
     type: Number,
     default: 0
   },
+  discountedPrice: {
+    type: Number
+  },
   image_thumb: String
 })
 
@@ -34,7 +37,7 @@ function onAddToCart(id) {
     <ProductImage :image_thumb="image_thumb" :title="title" />
     <div class="product-card-body w-full">
       <ProductName :title="title" />
-      <ProductPrice :price="price" />
+      <ProductPrice :price="price" :discounted-price="discountedPrice" />
       <ProductAddToCart @add-to-cart="onAddToCart(id)" />
     </div>
   </div>
