@@ -50,7 +50,7 @@ function getImageUrl(image) {
 }
 </script>
 <template>
-  <div class="kicker-images-section">
+  <div class="kicker-images-section module">
     <template v-for="(banner, index) in kickerImages" :key="banner.image">
       <KickerImage :class="`kicker-image-item-${index + 1}`">
         <template #image>
