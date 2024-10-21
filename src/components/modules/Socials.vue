@@ -17,5 +17,19 @@ import IconTikTok from '@/components/icons/social/IconTikTok.vue'
   display: flex;
   gap: 25px;
   align-items: flex-start;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .social-module {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  .social-module svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 </style>
