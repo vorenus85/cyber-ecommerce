@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-custom">
+  <div class="footer-custom mb-6">
     <div class="module-body">
       <a href="#" class="mb-3 inline-block"
         ><svg
@@ -44,5 +44,12 @@
 <style scoped>
 .footer-custom {
   color: #cfcfcf;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-custom {
+    text-align: left;
+  }
 }
 </style>

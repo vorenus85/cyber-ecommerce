@@ -69,5 +69,12 @@ const assistanceMenus = ref([
 .footer .module-head {
   font-size: 1rem;
   font-weight: 600;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer .module-head {
+    text-align: left;
+  }
 }
 </style>

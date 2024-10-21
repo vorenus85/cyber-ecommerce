@@ -1,6 +1,6 @@
 <template>
-  <section class="category-offer">
-    <div class="category-offer-module module container">
+  <section class="category-offer module">
+    <div class="category-offer-module container">
       <div class="module-head">
         <h3 class="module-head-title">Browse By Category</h3>
       </div>

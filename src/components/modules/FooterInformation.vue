@@ -31,11 +31,18 @@ defineProps({
 
 .footer-information-item {
   padding: 5px 0;
+  text-align: center;
 }
 
 .footer-information-link {
   color: #cfcfcf;
   font-size: 0.875rem;
   font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .footer-information-item {
+    text-align: left;
+  }
 }
 </style>
