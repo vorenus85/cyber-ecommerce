@@ -1,0 +1,1 @@
+import{c as t,a,b as o,o as s,U as r}from"./index-Dplcpgyk.js";const n={class:"container py-16"},_={__name:"AboutView",setup(c){return(i,e)=>(s(),t("div",n,[e[0]||(e[0]=a("h1",{class:"page-head-title"},"About",-1)),o(r)]))}};export{_ as default};
