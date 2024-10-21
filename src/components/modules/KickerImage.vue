@@ -40,6 +40,7 @@
   font-weight: 500;
   line-height: 24px; /* 171.429% */
   color: #909090;
+  text-align: center;
 }
 
 .kicker-image-title {
@@ -57,11 +58,11 @@
 @media (min-width: 992px) {
   .kicker-image-title h3 {
     font-size: 33px;
-    font-weight: 400;
   }
 }
 
 @media (min-width: 1200px) {
+  .kicker-image-description,
   .kicker-image-item {
     text-align: left;
   }

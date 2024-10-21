@@ -58,6 +58,7 @@ function getImageUrl(image) {
             :src="getImageUrl(banner.image)"
             :alt="banner.alt"
             loading="lazy"
+            class="w-full"
             width="360"
             height="360"
           />
