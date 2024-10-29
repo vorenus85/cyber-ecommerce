@@ -1,5 +1,6 @@
 <script setup>
 import KickerImage from '@/components/modules/KickerImage.vue'
+import Button from '@/components/modules/Button.vue'
 import { ref } from 'vue'
 
 const kickerImages = ref([
@@ -70,9 +71,11 @@ function getImageUrl(image) {
           <p>{{ banner.description }}</p>
         </template>
         <template #btn v-if="banner?.btn">
-          <a class="btn btn-secondary kicker-images-btn" :href="banner?.btnUrl">{{
-            banner?.btn
-          }}</a>
+          <Button
+            :classes="['btn-secondary', 'kicker-images-btn']"
+            :href="banner?.btnUrl"
+            :title="banner?.btn"
+          ></Button>
         </template>
       </KickerImage>
     </template>
@@ -82,11 +85,6 @@ function getImageUrl(image) {
 .kicker-images-section {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-}
-
-.kicker-images-btn {
-  padding-left: 56px;
-  padding-right: 56px;
 }
 
 .kicker-image-item-1 {
@@ -118,6 +116,11 @@ function getImageUrl(image) {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.btn.kicker-images-btn {
+  padding-left: 56px;
+  padding-right: 56px;
 }
 
 @media (min-width: 576px) {

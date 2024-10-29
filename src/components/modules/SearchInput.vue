@@ -7,7 +7,7 @@
       type="text"
       name="search"
       id="search"
-      class="block w-full rounded-md border-0 py-1.5 pl-10 pr-20 ring-1 ring-inset ring-gray-300 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+      class="search-input block w-full rounded-md border-0 py-1.5 pl-10 pr-20 focus:ring-1 focus:ring-inset focus:ring-gray-300 sm:text-sm sm:leading-6"
       placeholder="Search"
     />
   </div>
@@ -18,6 +18,12 @@ import iconSearch from '@/components/icons/commons/iconSearch.vue'
 <style scoped>
 .search-input-module {
   display: none;
+}
+
+.search-input {
+  height: 56px;
+  background: #f5f5f5;
+  border-color: #f5f5f5;
 }
 
 @media (min-width: 992px) {

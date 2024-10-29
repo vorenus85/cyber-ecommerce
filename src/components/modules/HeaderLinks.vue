@@ -9,9 +9,18 @@ import { RouterLink } from 'vue-router'
     <RouterLink to="/blog">Blog</RouterLink>
   </nav>
 </template>
-<style scoped>
+<style scoped lang="scss">
 .header-links {
   display: none;
+
+  a {
+    opacity: 0.3;
+    font-weight: 500;
+  }
+
+  a.router-link-exact-active {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 992px) {

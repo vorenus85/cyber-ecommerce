@@ -1,8 +1,14 @@
+<script setup>
+import Button from '@/components/modules/Button.vue'
+</script>
+
 <template>
   <div class="product-add-to-card w-full">
-    <button @click="$emit('addToCart')" class="btn add-to-cart btn-primary btn-block">
-      Buy Now
-    </button>
+    <Button
+      @click="$emit('addToCart')"
+      :classes="['add-to-cart', 'btn-primary', 'btn-block']"
+      :title="'Buy Now'"
+    />
   </div>
 </template>
 <style scoped>

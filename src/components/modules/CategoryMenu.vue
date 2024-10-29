@@ -2,12 +2,15 @@
   <div class="category-menu">
     <div class="container category-menu-container mx-auto pt-2 pb-2">
       <ul class="category-menu-list flex justify-between align-center">
-        <li v-for="category in categoryItems" :key="category.id" class="category-menu-item">
-          <a href="/" class="category-menu-link flex gap-2"
-            ><component class="category-menu-img" :is="category.icon"></component
-            >{{ category.name }}</a
-          >
-        </li>
+        <template v-for="category in categoryItems" :key="category.id">
+          <li class="category-menu-item">
+            <a href="/" class="category-menu-link flex gap-2"
+              ><component class="category-menu-img" :is="category.icon"></component
+              >{{ category.name }}</a
+            >
+          </li>
+          <li class="category-separator"></li>
+        </template>
       </ul>
     </div>
   </div>
@@ -37,11 +40,24 @@ const categoryItems = ref([
   background: var(--vt-c-black-soft);
 }
 
-@media (min-width: 992px) {
-  .category-menu {
-    display: block;
-  }
+.category-menu-item {
+  position: relative;
 }
+
+.category-separator {
+  content: '';
+  display: block;
+  opacity: 0.2;
+  background: #fff;
+  width: 1px;
+  height: 24px;
+  margin-top: 5px;
+}
+
+.category-separator:last-child {
+  display: none;
+}
+
 .category-menu-link {
   color: #fff;
   opacity: 0.5;
@@ -52,5 +68,10 @@ const categoryItems = ref([
 .category-menu-link:hover {
   opacity: 1;
 }
+
+@media (min-width: 992px) {
+  .category-menu {
+    display: block;
+  }
+}
 </style>
-<style></style>

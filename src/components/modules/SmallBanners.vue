@@ -1,5 +1,6 @@
 <script setup>
 import SmallBanner from '@/components/modules/SmallBanner.vue'
+import Button from '@/components/modules/Button.vue'
 import { ref } from 'vue'
 
 const smallBanners = ref([
@@ -55,7 +56,11 @@ function getImageUrl(image) {
           <p>{{ banner.description }}</p>
         </template>
         <template #btn v-if="banner?.btn">
-          <a class="btn btn-secondary small-banner-btn" :href="banner?.btnUrl">{{ banner?.btn }}</a>
+          <Button
+            :classes="['btn-secondary', 'small-banner-btn']"
+            :href="banner?.btnUrl"
+            :title="banner?.btn"
+          ></Button>
         </template>
       </SmallBanner>
     </template>
@@ -72,7 +77,7 @@ function getImageUrl(image) {
 }
 
 @media (min-width: 576px) {
-  .small-banner-btn {
+  .btn.small-banner-btn {
     width: initial;
     padding-left: 56px;
     padding-right: 56px;
