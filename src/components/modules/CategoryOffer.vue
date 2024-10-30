@@ -3,38 +3,20 @@
     <div class="category-offer-module container">
       <div class="module-head">
         <h3 class="module-head-title">Browse By Category</h3>
+        <div class="carousel-nav">
+          <button @click="prev" class="category-offer-carousel-prev"><IconArrow /></button>
+          <button @click="next" class="category-offer-carousel-next"><IconArrow /></button>
+        </div>
       </div>
       <div class="category-offer-list module-body">
-        <swiper-container
-          :space-between="spaceBetween"
-          :navigation="{
-            hideOnClick: true
-          }"
-          :breakpoints="{
-            0: {
-              slidesPerView: 2
-            },
-            768: {
-              slidesPerView: 3
-            },
-            1200: {
-              slidesPerView: 4
-            },
-            1400: {
-              slidesPerView: 6
-            }
-          }"
-          @swiper-progress="onProgress"
-          @swiper-slide-change="onSlideChange"
-          class="category-offer-swiper"
-        >
-          <swiper-slide v-for="category in categoryItems" :key="category.id">
+        <Carousel v-bind="carouselConfig" ref="carouselRef">
+          <Slide v-for="category in categoryItems" :key="category.id">
             <RouterLink to="/category-page/" class="category-menu-item">
-              <div href="/" class="category-offer-box flex flex-col items-center">
+              <div class="category-offer-box flex flex-col items-center">
                 <img
                   class="category-offer-img"
                   :src="getImageUrl(category.icon)"
-                  :alt="title"
+                  :alt="category.title"
                   width="32"
                   height="32"
                   loading="lazy"
@@ -42,74 +24,114 @@
                 <span class="category-offer-name">{{ category.name }}</span>
               </div>
             </RouterLink>
-          </swiper-slide>
-        </swiper-container>
+          </Slide>
+        </Carousel>
       </div>
     </div>
   </section>
 </template>
-<script>
-import { markRaw, ref, shallowRef } from 'vue'
+<script setup>
+import { ref } from 'vue'
+// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide } from 'vue3-carousel'
+import IconArrow from '../icons/commons/iconArrow.vue'
 
-// import function to register Swiper custom elements
-import { register } from 'swiper/element/bundle'
-import { RouterLink } from 'vue-router'
-// register Swiper custom elements
-register()
+const categoryItems = ref([
+  { name: 'Phones', id: '1', icon: 'phones.svg' },
+  { name: 'Smart Watches', id: '2', icon: 'watches.svg' },
+  { name: 'Computers', id: '3', icon: 'computers.svg' },
+  { name: 'Cameras', id: '4', icon: 'cameras.svg' },
+  { name: 'Headphones', id: '5', icon: 'headphones.svg' },
+  { name: 'Gaming', id: '6', icon: 'gaming.svg' },
+  { name: 'Phones', id: '7', icon: 'phones.svg' },
+  { name: 'Smart Watches', id: '8', icon: 'watches.svg' },
+  { name: 'Computers', id: '9', icon: 'computers.svg' },
+  { name: 'Cameras', id: '10', icon: 'cameras.svg' },
+  { name: 'Headphones', id: '11', icon: 'headphones.svg' },
+  { name: 'Gaming', id: '12', icon: 'gaming.svg' }
+])
 
-export default {
-  setup() {
-    const categoryItems = markRaw([
-      { name: 'Phones', id: '1', icon: 'phones.svg' },
-      { name: 'Smart Watches', id: '2', icon: 'watches.svg' },
-      { name: 'Computers', id: '3', icon: 'computers.svg' },
-      { name: 'Cameras', id: '4', icon: 'cameras.svg' },
-      { name: 'Headphones', id: '5', icon: 'headphones.svg' },
-      { name: 'Gaming', id: '6', icon: 'gaming.svg' },
-      { name: 'Phones', id: '7', icon: 'phones.svg' },
-      { name: 'Smart Watches', id: '8', icon: 'watches.svg' },
-      { name: 'Computers', id: '9', icon: 'computers.svg' },
-      { name: 'Cameras', id: '10', icon: 'cameras.svg' },
-      { name: 'Headphones', id: '11', icon: 'headphones.svg' },
-      { name: 'Gaming', id: '12', icon: 'gaming.svg' }
-    ])
+const carouselRef = ref()
 
-    const spaceBetween = 32
-
-    const onProgress = e => {
-      const [swiper, progress] = e.detail
-      console.log(progress)
-    }
-
-    const onSlideChange = e => {
-      console.log('slide changed')
-    }
-
-    function getImageUrl(name) {
-      const localhost = new URL(import.meta.url)
-      const appUrl = localhost.origin
-      const imageUrl = new URL(
-        `${import.meta.env.VITE_BASE_URL}/images/category-offers/${name}`,
-        appUrl
-      )
-
-      return imageUrl.href
-    }
-
-    return {
-      onProgress,
-      onSlideChange,
-      categoryItems,
-      spaceBetween,
-      getImageUrl
+const carouselConfig = {
+  itemsToShow: 1,
+  itemsToScroll: 1,
+  wrapAround: true,
+  snapAlign: 'end',
+  // breakpoints are mobile first
+  // any settings not specified will fallback to the carousel settings
+  breakpoints: {
+    // 200px and up
+    200: {
+      itemsToShow: 2
+    },
+    // 400px and up
+    768: {
+      itemsToShow: 3
+    },
+    992: {
+      itemsToShow: 4
+    },
+    1200: {
+      itemsToShow: 5
+    },
+    1400: {
+      itemsToShow: 6
     }
   }
+}
+
+function getImageUrl(name) {
+  const localhost = new URL(import.meta.url)
+  const appUrl = localhost.origin
+  const imageUrl = new URL(
+    `${import.meta.env.VITE_BASE_URL}/images/category-offers/${name}`,
+    appUrl
+  )
+
+  return imageUrl.href
+}
+
+const next = () => {
+  carouselRef.value.next()
+}
+const prev = () => {
+  carouselRef.value.prev()
 }
 </script>
 <style scoped lang="scss">
 .category-offer {
   padding: 64px 0;
   background: #fafafa;
+}
+
+.category-offer-list {
+  --carousel-padding: 0.5rem;
+  .carousel {
+    margin: 0 calc(var(--carousel-padding) * -1);
+    width: calc(100% + calc(var(--carousel-padding) * 2));
+  }
+
+  .carousel__slide {
+    padding: 0 var(--carousel-padding);
+  }
+}
+
+.category-offer .module-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.category-offer-carousel-next {
+  transform: rotate(180deg);
+}
+
+.carousel-nav {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .category-menu-item {
@@ -119,6 +141,7 @@ export default {
   transition: var(--transition);
   color: #000;
   display: flex;
+  width: 100%;
 }
 
 .category-menu-item:hover {
@@ -140,6 +163,9 @@ export default {
   gap: 8px;
 }
 
-.category-offer-slider-nav {
+@media (min-width: 1200px) {
+  .category-offer-list {
+    --carousel-padding: 1rem;
+  }
 }
 </style>

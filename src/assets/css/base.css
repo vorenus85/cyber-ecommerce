@@ -84,6 +84,7 @@ a {
   transition: var(--transition);
 }
 
+button:hover,
 a:hover {
   opacity: 0.9;
 }

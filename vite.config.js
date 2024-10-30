@@ -7,15 +7,7 @@ dotenv.config()
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue({
-      template: {
-        compilerOptions: {
-          isCustomElement: tag => ['swiper-container', 'swiper-slide'].includes(tag)
-        }
-      }
-    })
-  ],
+  plugins: [vue()],
   // eslint-disable-next-line no-undef
   base: process.env.VITE_BASE_URL,
   resolve: {

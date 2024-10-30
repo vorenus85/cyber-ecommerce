@@ -16,25 +16,43 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
-import iconPhones from '@/components/icons/categoryMenu/iconPhones.vue'
-import iconComputers from '@/components/icons/categoryMenu/iconComputers.vue'
-import iconWatches from '@/components/icons/categoryMenu/iconWatches.vue'
-import iconCameras from '@/components/icons/categoryMenu/iconCameras.vue'
-import iconHeadphones from '@/components/icons/categoryMenu/iconHeadphones.vue'
-import iconGaming from '@/components/icons/categoryMenu/iconGaming.vue'
+import { ref, shallowRef } from 'vue'
+import { defineAsyncComponent } from 'vue'
 
-const categoryItems = ref([
-  { name: 'Phones', id: '1', icon: iconPhones },
-  { name: 'Computers', id: '2', icon: iconComputers },
-  { name: 'Smart Watches', id: '3', icon: iconWatches },
-  { name: 'Cameras', id: '4', icon: iconCameras },
-  { name: 'Headphones', id: '5', icon: iconHeadphones },
-  { name: 'Gaming', id: '6', icon: iconGaming }
+const categoryItems = shallowRef([
+  {
+    name: 'Phones',
+    id: '1',
+    icon: defineAsyncComponent(() => import('@/components/icons/categoryMenu/iconPhones.vue'))
+  },
+  {
+    name: 'Computers',
+    id: '2',
+    icon: defineAsyncComponent(() => import('@/components/icons/categoryMenu/iconComputers.vue'))
+  },
+  {
+    name: 'Smart Watches',
+    id: '3',
+    icon: defineAsyncComponent(() => import('@/components/icons/categoryMenu/iconWatches.vue'))
+  },
+  {
+    name: 'Cameras',
+    id: '4',
+    icon: defineAsyncComponent(() => import('@/components/icons/categoryMenu/iconCameras.vue'))
+  },
+  {
+    name: 'Headphones',
+    id: '5',
+    icon: defineAsyncComponent(() => import('@/components/icons/categoryMenu/iconHeadphones.vue'))
+  },
+  {
+    name: 'Gaming',
+    id: '6',
+    icon: defineAsyncComponent(() => import('@/components/icons/categoryMenu/iconGaming.vue'))
+  }
 ])
 </script>
 <style scoped>
-/* TODO do not render category menu under 992px */
 .category-menu {
   display: none;
   background: var(--vt-c-black-soft);
