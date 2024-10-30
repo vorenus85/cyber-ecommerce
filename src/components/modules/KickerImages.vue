@@ -1,6 +1,9 @@
 <script setup>
 import KickerImage from '@/components/modules/KickerImage.vue'
 import Button from '@/components/modules/Button.vue'
+// If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination } from 'vue3-carousel'
 import { ref } from 'vue'
 
 const kickerImages = ref([
@@ -42,6 +45,26 @@ const kickerImages = ref([
   }
 ])
 
+const carouselConfig = {
+  itemsToShow: 1,
+  itemsToScroll: 1,
+  // breakpoints are mobile first
+  // any settings not specified will fallback to the carousel settings
+  breakpoints: {
+    // 200px and up
+    576: {
+      itemsToShow: 2
+    },
+    // 400px and up
+    992: {
+      itemsToShow: 3
+    },
+    1200: {
+      itemsToShow: 4
+    }
+  }
+}
+
 function getImageUrl(image) {
   const localhost = new URL(import.meta.url)
   const appUrl = localhost.origin
@@ -52,43 +75,53 @@ function getImageUrl(image) {
 </script>
 <template>
   <div class="kicker-images-section module">
-    <template v-for="(banner, index) in kickerImages" :key="banner.image">
-      <KickerImage :class="`kicker-image-item-${index + 1}`">
-        <template #image>
-          <img
-            :src="getImageUrl(banner.image)"
-            :alt="banner.alt"
-            loading="lazy"
-            class="w-full"
-            width="360"
-            height="360"
-          />
-        </template>
-        <template #title>
-          {{ banner.title }}
-        </template>
-        <template #description>
-          <p>{{ banner.description }}</p>
-        </template>
-        <template #btn v-if="banner?.btn">
-          <Button
-            :classes="['btn-secondary', 'kicker-images-btn']"
-            :href="banner?.btnUrl"
-            :title="banner?.btn"
-          ></Button>
-        </template>
-      </KickerImage>
-    </template>
+    <Carousel v-bind="carouselConfig">
+      <Slide v-for="(banner, index) in kickerImages" :key="banner.image">
+        <KickerImage :class="`kicker-image-item-${index + 1}`">
+          <template #image>
+            <img
+              :src="getImageUrl(banner.image)"
+              :alt="banner.alt"
+              loading="lazy"
+              class="w-full"
+              width="360"
+              height="360"
+            />
+          </template>
+          <template #title>
+            {{ banner.title }}
+          </template>
+          <template #description>
+            <p>{{ banner.description }}</p>
+          </template>
+          <template #btn v-if="banner?.btn">
+            <Button
+              :classes="['btn-secondary', 'kicker-images-btn']"
+              :href="banner?.btnUrl"
+              :title="banner?.btn"
+            ></Button>
+          </template>
+        </KickerImage>
+      </Slide>
+      <template #addons>
+        <Pagination />
+      </template>
+    </Carousel>
   </div>
 </template>
-<style>
-.kicker-images-section {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-}
-
+<style lang="scss">
 .kicker-image-item-1 {
   background: #fff;
+}
+
+.kicker-images-section {
+  .carousel__slide {
+    display: flex;
+  }
+
+  .kicker-image-item {
+    height: 100%;
+  }
 }
 
 .kicker-image-item-2 {
@@ -123,17 +156,24 @@ function getImageUrl(image) {
   padding-right: 56px;
 }
 
-@media (min-width: 576px) {
-  .kicker-images-section {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.carousel__pagination-button::after {
+  --vc-pgn-width: 8px;
+  --vc-pgn-height: 8px;
+
+  --vc-clr-secondary: #000;
+  border-radius: 100%;
+}
+
+.carousel__pagination {
+  margin: -30px 0 0;
+  position: relative;
+}
+
+.carousel__pagination-button:not(.carousel__pagination-button--active) {
+  opacity: 0.1;
 }
 
 @media (min-width: 1200px) {
-  .kicker-images-section {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   .kicker-image-btn-container {
     justify-content: start;
   }
