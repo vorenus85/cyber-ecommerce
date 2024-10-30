@@ -3,6 +3,16 @@
     <div class="container">
       <template v-for="(banner, index) in banners" :key="banner.image">
         <HeroBanner>
+          <template #title> <span v-html="banner.title"></span> </template>
+          <template #beforeTitle>
+            {{ banner.beforeTitle }}
+          </template>
+          <template #subTitle>
+            {{ banner.subTitle }}
+          </template>
+          <template #btn>
+            <Button :class="'btn-secondary'" :href="banner.btnUrl" :title="banner.btn"></Button>
+          </template>
           <template #image>
             <img :src="getImageUrl(banner.image)" :alt="banner.alt" />
           </template>
@@ -14,6 +24,7 @@
 <script setup>
 import HeroBanner from '@/components/modules/HeroBanner.vue'
 import { ref } from 'vue'
+import Button from './Button.vue'
 
 const banners = [
   {
@@ -39,17 +50,31 @@ function getImageUrl(image) {
 <style scoped lang="scss">
 .hero-banners {
   background: linear-gradient(91deg, #211c24 0.64%, #211c24 101%);
-  height: 769px;
   display: flex;
-  padding: 88px 16px 0px 16px;
   flex-direction: column;
   align-items: flex-start;
   gap: 48px;
+
+  .container {
+    height: 100%;
+  }
+}
+
+.hero-banners::v-deep .btn-secondary {
+  border-color: #fff;
+  color: #fff;
+  padding: 16px 56px;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .hero-banners {
+    height: 769px;
+  }
 }
 
 @media (min-width: 992px) {
   .hero-banners {
-    padding: 0px 160px;
     justify-content: space-between;
     align-items: center;
     align-content: center;
