@@ -4,10 +4,10 @@
       <ul class="category-menu-list flex justify-between align-center">
         <template v-for="category in categoryItems" :key="category.id">
           <li class="category-menu-item">
-            <a href="/" class="category-menu-link flex gap-2"
-              ><component class="category-menu-img" :is="category.icon"></component
-              >{{ category.name }}</a
-            >
+            <RouterLink to="/category-page/" class="category-menu-link flex gap-2">
+              <component class="category-menu-img" :is="category.icon"></component
+              >{{ category.name }}
+            </RouterLink>
           </li>
           <li class="category-separator"></li>
         </template>

@@ -4,36 +4,109 @@
       <div class="module-head">
         <h3 class="module-head-title">Browse By Category</h3>
       </div>
-      <div class="category-offer-list justify-between align-center module-body">
-        <a href="#" v-for="category in categoryItems" :key="category.id" class="category-menu-item">
-          <div href="/" class="category-offer-box flex flex-col items-center">
-            <component class="category-offer-img" :is="category.icon"></component
-            ><span class="category-offer-name">{{ category.name }}</span>
-          </div>
-        </a>
+      <div class="category-offer-list module-body">
+        <swiper-container
+          :space-between="spaceBetween"
+          :navigation="{
+            hideOnClick: true
+          }"
+          :breakpoints="{
+            0: {
+              slidesPerView: 2
+            },
+            768: {
+              slidesPerView: 3
+            },
+            1200: {
+              slidesPerView: 4
+            },
+            1400: {
+              slidesPerView: 6
+            }
+          }"
+          @swiper-progress="onProgress"
+          @swiper-slide-change="onSlideChange"
+          class="category-offer-swiper"
+        >
+          <swiper-slide v-for="category in categoryItems" :key="category.id">
+            <RouterLink to="/category-page/" class="category-menu-item">
+              <div href="/" class="category-offer-box flex flex-col items-center">
+                <img
+                  class="category-offer-img"
+                  :src="getImageUrl(category.icon)"
+                  :alt="title"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+                <span class="category-offer-name">{{ category.name }}</span>
+              </div>
+            </RouterLink>
+          </swiper-slide>
+        </swiper-container>
       </div>
     </div>
   </section>
 </template>
-<script setup>
-import { ref } from 'vue'
-import iconPhones from '@/components/icons/categoryOffer/iconPhones.vue'
-import iconComputers from '@/components/icons/categoryOffer/iconComputers.vue'
-import iconWatches from '@/components/icons/categoryOffer/iconWatches.vue'
-import iconCameras from '@/components/icons/categoryOffer/iconCameras.vue'
-import iconHeadphones from '@/components/icons/categoryOffer/iconHeadphones.vue'
-import iconGaming from '@/components/icons/categoryOffer/iconGaming.vue'
+<script>
+import { markRaw, ref, shallowRef } from 'vue'
 
-const categoryItems = ref([
-  { name: 'Phones', id: '1', icon: iconPhones },
-  { name: 'Computers', id: '2', icon: iconComputers },
-  { name: 'Smart Watches', id: '3', icon: iconWatches },
-  { name: 'Cameras', id: '4', icon: iconCameras },
-  { name: 'Headphones', id: '5', icon: iconHeadphones },
-  { name: 'Gaming', id: '6', icon: iconGaming }
-])
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle'
+import { RouterLink } from 'vue-router'
+// register Swiper custom elements
+register()
+
+export default {
+  setup() {
+    const categoryItems = markRaw([
+      { name: 'Phones', id: '1', icon: 'phones.svg' },
+      { name: 'Smart Watches', id: '2', icon: 'watches.svg' },
+      { name: 'Computers', id: '3', icon: 'computers.svg' },
+      { name: 'Cameras', id: '4', icon: 'cameras.svg' },
+      { name: 'Headphones', id: '5', icon: 'headphones.svg' },
+      { name: 'Gaming', id: '6', icon: 'gaming.svg' },
+      { name: 'Phones', id: '7', icon: 'phones.svg' },
+      { name: 'Smart Watches', id: '8', icon: 'watches.svg' },
+      { name: 'Computers', id: '9', icon: 'computers.svg' },
+      { name: 'Cameras', id: '10', icon: 'cameras.svg' },
+      { name: 'Headphones', id: '11', icon: 'headphones.svg' },
+      { name: 'Gaming', id: '12', icon: 'gaming.svg' }
+    ])
+
+    const spaceBetween = 32
+
+    const onProgress = e => {
+      const [swiper, progress] = e.detail
+      console.log(progress)
+    }
+
+    const onSlideChange = e => {
+      console.log('slide changed')
+    }
+
+    function getImageUrl(name) {
+      const localhost = new URL(import.meta.url)
+      const appUrl = localhost.origin
+      const imageUrl = new URL(
+        `${import.meta.env.VITE_BASE_URL}/images/category-offers/${name}`,
+        appUrl
+      )
+
+      return imageUrl.href
+    }
+
+    return {
+      onProgress,
+      onSlideChange,
+      categoryItems,
+      spaceBetween,
+      getImageUrl
+    }
+  }
+}
 </script>
-<style scoped>
+<style scoped lang="scss">
 .category-offer {
   padding: 64px 0;
   background: #fafafa;
@@ -45,6 +118,7 @@ const categoryItems = ref([
   background: var(--card-background);
   transition: var(--transition);
   color: #000;
+  display: flex;
 }
 
 .category-menu-item:hover {
@@ -66,23 +140,6 @@ const categoryItems = ref([
   gap: 8px;
 }
 
-.category-offer-list:not(.slider) {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
-@media (min-width: 992px) {
-  .category-offer-list:not(.slider) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-@media (min-width: 1400px) {
-  .category-offer-list:not(.slider) {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 2rem;
-  }
+.category-offer-slider-nav {
 }
 </style>

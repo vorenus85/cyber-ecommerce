@@ -1,6 +1,8 @@
 <template>
   <div class="product-image">
-    <img :src="getImageUrl(image_thumb)" :alt="title" width="160" height="160" loading="lazy" />
+    <RouterLink to="product-page">
+      <img :src="getImageUrl(image_thumb)" :alt="title" width="160" height="160" loading="lazy" />
+    </RouterLink>
   </div>
 </template>
 <script setup>
