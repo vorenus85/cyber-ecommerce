@@ -8,7 +8,7 @@
         <slot name="btn" />
       </div>
     </div>
-    <div class="hero-banner-image">
+    <div class="hero-banner-image float-animate">
       <slot name="image" />
     </div>
   </div>
@@ -42,6 +42,7 @@
 
 .hero-banner-image {
   align-self: end;
+  margin-bottom: -20px;
 }
 
 .hero-banner-title span {
@@ -68,6 +69,22 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 24px; /* 133.333% */
+}
+
+.float-animate {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
 
 @media (min-width: 768px) {
