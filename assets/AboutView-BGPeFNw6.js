@@ -1,0 +1,1 @@
+import{U as t}from"./UnderConstruction-hIUXuPe-.js";import{c as o,a,b as s,o as r}from"./index-BDMGoDky.js";const n={class:"container py-16"},d={__name:"AboutView",setup(c){return(i,e)=>(r(),o("div",n,[e[0]||(e[0]=a("h1",{class:"page-head-title"},"About",-1)),s(t)]))}};export{d as default};
