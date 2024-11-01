@@ -5,6 +5,7 @@ import ProductName from '@/components/modules/ProductCard/ProductTitle.vue'
 import ProductPrice from '@/components/modules/ProductCard/ProductPrice.vue'
 import ProductAddToCart from '@/components/modules/ProductCard/ProductAddToCart.vue'
 import { useWishlistStore } from '@/stores/useWishlistStore.js'
+import { useCartStore } from '@/stores/useCartStore.js'
 import { computed, toRefs } from 'vue'
 
 // Props passed into the component
@@ -22,6 +23,7 @@ const { id } = toRefs(props.product)
 const isProductInWishlist = computed(() => wishlistStore.isInWishlist(id.value))
 
 const wishlistStore = useWishlistStore()
+const cartStore = useCartStore()
 
 function onToggleWishlist() {
   if (isProductInWishlist.value) {
@@ -31,18 +33,19 @@ function onToggleWishlist() {
   }
 }
 
-function onAddToCart(id) {
-  console.log('onAddToCart', id)
+function onAddToCart() {
+  console.log('onAddToCart', props.product)
+  cartStore.addToCart(props.product)
 }
 </script>
 <template>
   <div class="product-card">
     <ProductWishlist @toggle-wishlist="onToggleWishlist" />
-    <ProductImage :image_thumb="product?.image_thumb" :title="product?.title" />
+    <ProductImage :imageThumb="product?.imageThumb" :title="product?.title" />
     <div class="product-card-body w-full">
       <ProductName :title="product?.title" />
       <ProductPrice :price="product?.price" :discounted-price="product?.discountedPrice" />
-      <ProductAddToCart @add-to-cart="onAddToCart(product?.id)" />
+      <ProductAddToCart @add-to-cart="onAddToCart" />
     </div>
   </div>
 </template>

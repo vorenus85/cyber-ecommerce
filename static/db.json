@@ -5,116 +5,116 @@
       "title": "Apple iPhone 14 Pro Max 128GB Deep Purple (MQ9T3RX/A)",
       "price": 900,
       "image": "iphone_14_pro_purple_640x640.png",
-      "image_thumb": "iphone_14_pro_purple_160x160.png"
+      "imageThumb": "iphone_14_pro_purple_160x160.png"
     },
     {
       "id": 2,
       "title": "Blackmagic Pocket Cinema Camera 6k",
       "price": 2535,
       "image": "black_magic_pocket_cinema_640x640.png",
-      "image_thumb": "black_magic_pocket_cinema_160x160.png"
+      "imageThumb": "black_magic_pocket_cinema_160x160.png"
     },
     {
       "id": 3,
       "title": "Apple Watch Series 9 GPS 41mm Starlight Aluminium Case",
       "price": 399,
-      "discounted_price": 250,
+      "discountedPrice": 250,
       "image": "apple_watch_series_9_640x640.png",
-      "image_thumb": "apple_watch_series_9_160x160.png"
+      "imageThumb": "apple_watch_series_9_160x160.png"
     },
     {
       "id": 4,
       "title": "AirPods Max Silver",
       "price": 549,
-      "discounted_price": 425,
+      "discountedPrice": 425,
       "image": "airpods_max_silver_640x640.png",
-      "image_thumb": "airpods_max_silver_160x160.png"
+      "imageThumb": "airpods_max_silver_160x160.png"
     },
     {
       "id": 5,
       "title": "Samsung Galaxy Watch6 Classic 47mm Black",
       "price": 369,
-      "discounted_price": 200,
+      "discountedPrice": 200,
       "image": "samsung_galaxy_watch_6_classic_640x640.png",
-      "image_thumb": "samsung_galaxy_watch_6_classic_160x160.png"
+      "imageThumb": "samsung_galaxy_watch_6_classic_160x160.png"
     },
     {
       "id": 6,
       "title": "Galaxy Z Fold5 Unlocked | 256GB | Phantom Black",
       "price": 1799,
-      "discounted_price": 1500,
+      "discountedPrice": 1500,
       "image": "galaxy_z_fold5_640x640.png",
-      "image_thumb": "galaxy_z_fold5_160x160.png"
+      "imageThumb": "galaxy_z_fold5_160x160.png"
     },
     {
       "id": 7,
       "title": "Galaxy Buds FE Graphite",
       "price": 99.99,
       "image": "galaxy_buds_fe_graphite_640x640.png",
-      "image_thumb": "galaxy_buds_fe_graphite_640x640.png"
+      "imageThumb": "galaxy_buds_fe_graphite_640x640.png"
     },
     {
       "id": 8,
       "title": "Apple iPad 9 10.2\" 64GB Wi-Fi Silver (MK2L3) 2021",
       "price": 398,
       "image": "apple_ipad_9_10_2_640x640.png",
-      "image_thumb": "apple_ipad_9_10_2_160x160.png"
+      "imageThumb": "apple_ipad_9_10_2_160x160.png"
     },
     {
       "id": 9,
       "title": "Apple iPhone 14 Pro 512GB Gold (MQ233)",
       "price": 1437,
       "image": "iphone_14_pro_gold_640x640.png",
-      "image_thumb": "iphone_14_pro_gold_160x160.png"
+      "imageThumb": "iphone_14_pro_gold_160x160.png"
     },
     {
       "id": 10,
       "title": "Apple iPhone 14 Pro 1TB Gold (MQ2V3)",
       "price": 1499,
       "image": "iphone_14_pro_gold_mq2v3_640_640.png",
-      "image_thumb": "iphone_14_pro_gold_mq2v3_160x160.png"
+      "imageThumb": "iphone_14_pro_gold_mq2v3_160x160.png"
     },
     {
       "id": 10,
       "title": "Apple iPhone 14 Pro 1TB Gold (MQ2V3)",
       "price": 1499,
       "image": "iphone_14_pro_gold_mq2v3_640_640.png",
-      "image_thumb": "iphone_14_pro_gold_mq2v3_160x160.png"
+      "imageThumb": "iphone_14_pro_gold_mq2v3_160x160.png"
     },
     {
       "id": 11,
       "title": "Apple iPhone 11 128GB White (MQ233)",
       "price": 510,
       "image": "apple_iphone_11_mq233_640x640.png",
-      "image_thumb": "apple_iphone_11_mq233_160x160.png"
+      "imageThumb": "apple_iphone_11_mq233_160x160.png"
     },
     {
       "id": 12,
       "title": "Apple iPhone 14 Pro 128GB Deep Purple (MQ0G3)",
       "price": 1600,
       "image": "apple_iphone_14_pro_mq063_640x640.png",
-      "image_thumb": "apple_iphone_14_pro_mq063_160x160.png"
+      "imageThumb": "apple_iphone_14_pro_mq063_160x160.png"
     },
     {
       "id": 13,
       "title": "Apple iPhone 13 mini 128GB Pink (MLK23)",
       "price": 850,
       "image": "apple_iphone_13_mini__mlk23_640x640.png",
-      "image_thumb": "apple_iphone_13_mini__mlk23_160x160.png"
+      "imageThumb": "apple_iphone_13_mini__mlk23_160x160.png"
     },
     {
       "id": 14,
       "title": "Apple iPhone 14 Pro 256GB Space Black (MQ0T3)",
       "price": 1399,
       "image": "apple_iphone_14_pro_mq0t3_640x640.png",
-      "image_thumb": "apple_iphone_14_pro_mq0t3_160x160.png"
+      "imageThumb": "apple_iphone_14_pro_mq0t3_160x160.png"
     },
     {
       "id": 15,
       "title": "Apple iPhone 14 Pro 256GB Silver (MQ103)",
       "price": 1399,
       "image": "iphone_14_pro_silver_mq103_640x640.png",
-      "image_thumb": "iphone_14_pro_silver_mq103_160x160.png"
+      "imageThumb": "iphone_14_pro_silver_mq103_160x160.png"
     }
   ]
 }

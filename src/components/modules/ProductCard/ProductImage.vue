@@ -2,7 +2,7 @@
   <div class="product-image">
     <RouterLink to="product-page">
       <img
-        :src="imageUrl(image_thumb, folder)"
+        :src="imageUrl(imageThumb, folder)"
         :alt="title"
         width="160"
         height="160"
@@ -13,7 +13,7 @@
 </template>
 <script setup>
 defineProps({
-  image_thumb: String,
+  imageThumb: String,
   title: String
 })
 
