@@ -1,30 +1,34 @@
 <script setup>
 import ProductImage from '@/components/modules/ProductCard/ProductImage.vue'
-import ProductFavorite from '@/components/modules/ProductCard/ProductFavorite.vue'
+import ProductWishlist from '@/components/modules/ProductCard/ProductWishlist.vue'
 import ProductName from '@/components/modules/ProductCard/ProductTitle.vue'
 import ProductPrice from '@/components/modules/ProductCard/ProductPrice.vue'
 import ProductAddToCart from '@/components/modules/ProductCard/ProductAddToCart.vue'
-defineProps({
-  id: {
-    type: Number,
-    default: 0
-  },
-  title: {
-    type: String,
-    default: 'Product item'
-  },
-  price: {
-    type: Number,
-    default: 0
-  },
-  discountedPrice: {
-    type: Number
-  },
-  image_thumb: String
+import { useWishlistStore } from '@/stores/useWishlistStore.js'
+import { computed, toRefs } from 'vue'
+
+// Props passed into the component
+const props = defineProps({
+  product: {
+    type: Object,
+    required: true
+  }
 })
 
-function onToggleFavorite(id) {
-  console.log('onToggleFavorite', id)
+// Destructure product prop
+const { id } = toRefs(props.product)
+
+// Computed properties for reactive data
+const isProductInWishlist = computed(() => wishlistStore.isInWishlist(id.value))
+
+const wishlistStore = useWishlistStore()
+
+function onToggleWishlist() {
+  if (isProductInWishlist.value) {
+    wishlistStore.removeFromWishlist(id.value)
+  } else {
+    wishlistStore.addToWishlist(props.product)
+  }
 }
 
 function onAddToCart(id) {
@@ -33,12 +37,12 @@ function onAddToCart(id) {
 </script>
 <template>
   <div class="product-card">
-    <ProductFavorite @toggle-favorite="onToggleFavorite(id)" />
-    <ProductImage :image_thumb="image_thumb" :title="title" />
+    <ProductWishlist @toggle-wishlist="onToggleWishlist" />
+    <ProductImage :image_thumb="product?.image_thumb" :title="product?.title" />
     <div class="product-card-body w-full">
-      <ProductName :title="title" />
-      <ProductPrice :price="price" :discounted-price="discountedPrice" />
-      <ProductAddToCart @add-to-cart="onAddToCart(id)" />
+      <ProductName :title="product?.title" />
+      <ProductPrice :price="product?.price" :discounted-price="product?.discountedPrice" />
+      <ProductAddToCart @add-to-cart="onAddToCart(product?.id)" />
     </div>
   </div>
 </template>

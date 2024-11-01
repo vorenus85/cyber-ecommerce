@@ -1,17 +1,21 @@
 <script setup>
 import iconFavorite from '@/components/icons/commons/iconFavorite.vue'
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
+
+// Define the emit function for event emitting
+const emit = defineEmits(['toggleWishlist'])
 
 const selected = ref(false)
 
-function toggleFavorite() {
+function toggleWishlist() {
   selected.value = !selected.value
-  this.$emit('toggleFavorite')
+  emit('toggleWishlist') // Use the `emit` function directly
 }
 </script>
+
 <template>
   <div class="product-header flex justify-end">
-    <button class="btn-favorite" @click="toggleFavorite" :class="{ selected: selected }">
+    <button class="btn-favorite" @click="toggleWishlist" :class="{ selected: selected }">
       <iconFavorite />
     </button>
   </div>

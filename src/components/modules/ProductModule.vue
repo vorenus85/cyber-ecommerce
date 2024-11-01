@@ -5,15 +5,7 @@
       <SkeletonCard v-for="item in products" :key="item" />
     </div>
     <div v-else class="products module">
-      <ProductCard
-        v-for="item in products"
-        :key="item.id"
-        :id="item.id"
-        :image_thumb="item.image_thumb"
-        :title="item.title"
-        :price="item.price"
-        :discountedPrice="item?.discounted_price"
-      />
+      <ProductCard v-for="product in products" :product="product" :key="product.id" />
     </div>
   </div>
 </template>
