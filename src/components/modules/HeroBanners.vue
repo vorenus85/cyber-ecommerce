@@ -14,7 +14,11 @@
             <Button :class="'btn-secondary'" :href="banner.btnUrl" :title="banner.btn"></Button>
           </template>
           <template #image>
-            <img :src="getImageUrl(banner.image)" :alt="banner.alt" />
+            <picture>
+              <source media="(max-width: 768px)" :srcset="getImageUrl(banner.imageMobile)" />
+              <source media="(min-width: 767px)" :srcset="getImageUrl(banner.image)" />
+              <img :alt="banner.alt" :src="getImageUrl(banner.image)" />
+            </picture>
           </template>
         </HeroBanner>
       </template>
