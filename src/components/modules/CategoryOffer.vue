@@ -15,7 +15,7 @@
               <div class="category-offer-box flex flex-col items-center">
                 <img
                   class="category-offer-img"
-                  :src="getImageUrl(category.icon)"
+                  :src="imageUrl(category.icon, folder)"
                   :alt="category.title"
                   width="32"
                   height="32"
@@ -36,6 +36,9 @@ import { ref } from 'vue'
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide } from 'vue3-carousel'
 import IconArrow from '../icons/commons/iconArrow.vue'
+import { useImageUrl } from '@/composables/useImageUrl'
+const folder = 'category-offers'
+const { imageUrl } = useImageUrl()
 
 const categoryItems = ref([
   { name: 'Phones', id: '1', icon: 'phones.svg' },
@@ -80,17 +83,6 @@ const carouselConfig = {
       itemsToShow: 6
     }
   }
-}
-
-function getImageUrl(name) {
-  const localhost = new URL(import.meta.url)
-  const appUrl = localhost.origin
-  const imageUrl = new URL(
-    `${import.meta.env.VITE_BASE_URL}/images/category-offers/${name}`,
-    appUrl
-  )
-
-  return imageUrl.href
 }
 
 const next = () => {

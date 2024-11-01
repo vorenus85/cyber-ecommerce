@@ -5,6 +5,9 @@ import Button from '@/components/modules/Button.vue'
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination } from 'vue3-carousel'
 import { ref } from 'vue'
+import { useImageUrl } from '@/composables/useImageUrl'
+const folder = 'kicker-images'
+const { imageUrl } = useImageUrl()
 
 const kickerImages = ref([
   {
@@ -64,14 +67,6 @@ const carouselConfig = {
     }
   }
 }
-
-function getImageUrl(image) {
-  const localhost = new URL(import.meta.url)
-  const appUrl = localhost.origin
-  const imageUrl = new URL(`${import.meta.env.VITE_BASE_URL}/images/kicker-images/${image}`, appUrl)
-
-  return imageUrl.href
-}
 </script>
 <template>
   <div class="kicker-images-section module">
@@ -80,7 +75,7 @@ function getImageUrl(image) {
         <KickerImage :class="`kicker-image-item-${index + 1}`">
           <template #image>
             <img
-              :src="getImageUrl(banner.image)"
+              :src="imageUrl(banner.image, folder)"
               :alt="banner.alt"
               loading="lazy"
               class="w-full"
@@ -176,6 +171,10 @@ function getImageUrl(image) {
 @media (min-width: 1200px) {
   .kicker-image-btn-container {
     justify-content: start;
+  }
+
+  .carousel__pagination {
+    display: none;
   }
 }
 </style>

@@ -15,9 +15,9 @@
           </template>
           <template #image>
             <picture>
-              <source media="(max-width: 768px)" :srcset="getImageUrl(banner.imageMobile)" />
-              <source media="(min-width: 767px)" :srcset="getImageUrl(banner.image)" />
-              <img :alt="banner.alt" :src="getImageUrl(banner.image)" />
+              <source media="(max-width: 768px)" :srcset="imageUrl(banner.imageMobile, folder)" />
+              <source media="(min-width: 767px)" :srcset="imageUrl(banner.image, folder)" />
+              <img :alt="banner.alt" :src="imageUrl(banner.image, folder)" />
             </picture>
           </template>
         </HeroBanner>
@@ -27,6 +27,7 @@
 </template>
 <script setup>
 import HeroBanner from '@/components/modules/HeroBanner.vue'
+import { useImageUrl } from '@/composables/useImageUrl.js'
 import Button from './Button.vue'
 
 const banners = [
@@ -42,13 +43,8 @@ const banners = [
   }
 ]
 
-function getImageUrl(image) {
-  const localhost = new URL(import.meta.url)
-  const appUrl = localhost.origin
-  const imageUrl = new URL(`${import.meta.env.VITE_BASE_URL}/images/hero-banners/${image}`, appUrl)
-
-  return imageUrl.href
-}
+const folder = 'hero-banners'
+const { imageUrl } = useImageUrl()
 </script>
 <style scoped lang="scss">
 .hero-banners {

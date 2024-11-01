@@ -2,6 +2,9 @@
 import SmallBanner from '@/components/modules/SmallBanner.vue'
 import Button from '@/components/modules/Button.vue'
 import { ref } from 'vue'
+import { useImageUrl } from '@/composables/useImageUrl'
+const folder = 'small-banners'
+const { imageUrl } = useImageUrl()
 
 const smallBanners = ref([
   {
@@ -33,21 +36,13 @@ const smallBanners = ref([
     btnUrl: '#'
   }
 ])
-
-function getImageUrl(image) {
-  const localhost = new URL(import.meta.url)
-  const appUrl = localhost.origin
-  const imageUrl = new URL(`${import.meta.env.VITE_BASE_URL}/images/small-banners/${image}`, appUrl)
-
-  return imageUrl.href
-}
 </script>
 <template>
   <div class="small-banners-section">
     <template v-for="(banner, index) in smallBanners" :key="banner.image">
       <SmallBanner :class="`small-banner-item-${index + 1}`">
         <template #image>
-          <img :src="getImageUrl(banner.image)" :alt="banner.alt" loading="lazy" />
+          <img :src="imageUrl(banner.image, folder)" :alt="banner.alt" loading="lazy" />
         </template>
         <template #title>
           <h2 v-html="banner.title"></h2>
