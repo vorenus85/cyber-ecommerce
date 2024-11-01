@@ -1,6 +1,4 @@
-<script script>
-import { RouterLink } from 'vue-router'
-</script>
+<script script></script>
 <template>
   <nav class="header-links">
     <RouterLink to="/">Home</RouterLink>

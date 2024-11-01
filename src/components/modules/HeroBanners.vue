@@ -1,7 +1,7 @@
 <template>
   <section class="hero-banners">
     <div class="container">
-      <template v-for="(banner, index) in banners" :key="banner.image">
+      <template v-for="banner in banners" :key="banner.image">
         <HeroBanner>
           <template #title> <span v-html="banner.title"></span> </template>
           <template #beforeTitle>
@@ -23,7 +23,6 @@
 </template>
 <script setup>
 import HeroBanner from '@/components/modules/HeroBanner.vue'
-import { ref } from 'vue'
 import Button from './Button.vue'
 
 const banners = [
@@ -69,7 +68,7 @@ function getImageUrl(image) {
 
 @media (min-width: 768px) {
   .hero-banners {
-    height: 769px;
+    height: 632px;
   }
 }
 

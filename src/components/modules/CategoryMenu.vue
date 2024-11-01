@@ -16,7 +16,7 @@
   </div>
 </template>
 <script setup>
-import { ref, shallowRef } from 'vue'
+import { shallowRef } from 'vue'
 import { defineAsyncComponent } from 'vue'
 
 const categoryItems = shallowRef([

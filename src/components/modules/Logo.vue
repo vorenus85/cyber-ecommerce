@@ -1,6 +1,3 @@
-<script script>
-import { RouterLink } from 'vue-router'
-</script>
 <template>
   <RouterLink to="/"
     ><svg
