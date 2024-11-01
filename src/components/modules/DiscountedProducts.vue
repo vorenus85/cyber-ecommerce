@@ -1,7 +1,7 @@
 <template>
   <div class="discounted-products module container">
     <div class="module-head">
-      <h3 class="module-head-titl">Discounts up to -50%</h3>
+      <h3 class="module-head-title">Discounts up to -50%</h3>
     </div>
     <div class="module-body">
       <ProductModule :error="error" :loading="loading" :products="products" />

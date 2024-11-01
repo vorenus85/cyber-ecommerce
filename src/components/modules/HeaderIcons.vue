@@ -4,18 +4,23 @@ import iconCart from '@/components/icons/commons/iconCart.vue'
 import iconUser from '@/components/icons/commons/iconUser.vue'
 import iconMobileMenu from '@/components/icons/commons/iconMobileMenu.vue'
 import { useWishlistStore } from '@/stores/useWishlistStore.js'
+import { useCartStore } from '@/stores/useCartStore.js'
 const wishlistStore = useWishlistStore()
+const cartStore = useCartStore()
 </script>
 <template>
   <div class="header-icons">
     <button class="header-btn-favorite">
       <iconFavorites />
-      <span class="wishlist-count pulse" v-if="wishlistStore.wishlistCount">{{
+      <span class="wishlist-count red-pulse" v-if="wishlistStore.wishlistCount">{{
         wishlistStore.wishlistCount
       }}</span>
     </button>
-    <button class="btn-cart">
+    <button class="header-btn-cart">
       <iconCart />
+      <span class="cart-count black-pulse" v-if="cartStore.cartCount">{{
+        cartStore.cartCount
+      }}</span>
     </button>
     <button class="btn-user">
       <iconUser />
@@ -31,13 +36,19 @@ const wishlistStore = useWishlistStore()
   gap: 24px;
 }
 
-.pulse {
+.red-pulse {
   box-shadow: 0 0 0 0 rgba(255, 0, 0, 1);
   transform: scale(1);
-  animation: pulse 2s infinite;
+  animation: redPulse 2s infinite;
 }
 
-@keyframes pulse {
+.black-pulse {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: blackPulse 2s infinite;
+}
+
+@keyframes redPulse {
   0% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
@@ -51,6 +62,23 @@ const wishlistStore = useWishlistStore()
   100% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
+
+@keyframes blackPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
 
@@ -70,6 +98,23 @@ const wishlistStore = useWishlistStore()
   justify-content: center;
 }
 
+.cart-count {
+  position: absolute;
+  font-size: 10px;
+  color: #fff;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  background: #000;
+  border-radius: 100%;
+  top: -3px;
+  right: -3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-btn-cart,
 .header-btn-favorite {
   position: relative;
 }
