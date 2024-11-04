@@ -11,7 +11,7 @@
       <div class="category-offer-list module-body">
         <Carousel v-bind="carouselConfig" ref="carouselRef">
           <Slide v-for="category in categoryItems" :key="category.id">
-            <RouterLink to="/category-page/" class="category-menu-item">
+            <RouterLink to="#" class="category-menu-item">
               <div class="category-offer-box flex flex-col items-center">
                 <img
                   class="category-offer-img"

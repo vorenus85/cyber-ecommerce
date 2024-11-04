@@ -1,6 +1,6 @@
 <template>
   <div class="product-image">
-    <RouterLink to="product-page">
+    <RouterLink to="#">
       <img
         :src="imageUrl(imageThumb, folder)"
         :alt="title"

@@ -4,7 +4,7 @@
       <ul class="category-menu-list flex justify-between align-center">
         <template v-for="category in categoryItems" :key="category.id">
           <li class="category-menu-item">
-            <RouterLink to="/category-page/" class="category-menu-link flex gap-2">
+            <RouterLink to="#" class="category-menu-link flex gap-2">
               <component class="category-menu-img" :is="category.icon"></component
               >{{ category.name }}
             </RouterLink>
