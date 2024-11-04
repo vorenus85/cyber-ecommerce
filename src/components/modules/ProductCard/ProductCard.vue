@@ -34,13 +34,15 @@ function onToggleWishlist() {
 }
 
 function onAddToCart() {
-  console.log('onAddToCart', props.product)
   cartStore.addToCart(props.product)
 }
 </script>
 <template>
   <div class="product-card">
-    <ProductWishlist @toggle-wishlist="onToggleWishlist" />
+    <ProductWishlist
+      @toggle-wishlist="onToggleWishlist"
+      :onWishlist="wishlistStore.isInWishlist(product.id)"
+    />
     <ProductImage :imageThumb="product?.imageThumb" :title="product?.title" />
     <div class="product-card-body w-full">
       <ProductName :title="product?.title" />

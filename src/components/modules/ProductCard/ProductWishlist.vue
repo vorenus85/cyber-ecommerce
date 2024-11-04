@@ -1,11 +1,22 @@
 <script setup>
 import iconFavorite from '@/components/icons/commons/iconFavorite.vue'
-import { ref, defineEmits } from 'vue'
+import { ref, defineEmits, watch } from 'vue'
+
+const props = defineProps({
+  onWishlist: Boolean
+})
 
 // Define the emit function for event emitting
 const emit = defineEmits(['toggleWishlist'])
 
-const selected = ref(false)
+const selected = ref(props.onWishlist)
+
+watch(
+  () => props.onWishlist,
+  newVal => {
+    selected.value = newVal
+  }
+)
 
 function toggleWishlist() {
   selected.value = !selected.value
