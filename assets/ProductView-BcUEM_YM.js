@@ -1,1 +1,0 @@
-import{U as t}from"./UnderConstruction-cs4_17MI.js";import{c as o,a,b as r,o as s}from"./index-D3uCpIM_.js";const c={class:"container py-16"},_={__name:"ProductView",setup(n){return(p,e)=>(s(),o("div",c,[e[0]||(e[0]=a("h1",{class:"page-head-title"},"Product page",-1)),r(t)]))}};export{_ as default};
