@@ -3,14 +3,20 @@ import Logo from '@/components/modules/Logo.vue'
 import HeaderLinks from '@/components/modules/HeaderLinks.vue'
 import SearchInput from '@/components/modules/SearchInput.vue'
 import HeaderIcons from '@/components/modules/HeaderIcons.vue'
+import CategoryMenu from '@/components/modules/CategoryMenu.vue'
 </script>
 <template>
-  <header class="container header-module">
-    <Logo />
-    <SearchInput />
-    <HeaderLinks />
-    <HeaderIcons />
-  </header>
+  <div class="header sticky top-0 bg-white z-10">
+    <div class="header-top container header-module">
+      <Logo />
+      <SearchInput />
+      <HeaderLinks />
+      <HeaderIcons />
+    </div>
+    <div class="header-bottom">
+      <CategoryMenu />
+    </div>
+  </div>
 </template>
 <style>
 .header-module {
