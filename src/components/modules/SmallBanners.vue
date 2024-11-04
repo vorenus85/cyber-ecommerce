@@ -1,6 +1,6 @@
 <script setup>
 import SmallBanner from '@/components/modules/SmallBanner.vue'
-import Button from '@/components/modules/Button.vue'
+import MainButton from '@/components/modules/MainButton.vue'
 import { ref } from 'vue'
 import { useImageUrl } from '@/composables/useImageUrl'
 const folder = 'small-banners'
@@ -51,11 +51,11 @@ const smallBanners = ref([
           <p>{{ banner.description }}</p>
         </template>
         <template #btn v-if="banner?.btn">
-          <Button
+          <MainButton
             :classes="['btn-secondary', 'small-banner-btn']"
             :href="banner?.btnUrl"
             :title="banner?.btn"
-          ></Button>
+          ></MainButton>
         </template>
       </SmallBanner>
     </template>

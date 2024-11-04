@@ -9,7 +9,7 @@ defineProps({
 </script>
 <template>
   <div class="product-title">
-    <RouterLink to="#" class="product-title-link">{{ title }}</RouterLink>
+    <RouterLink to="#" class="product-title-link hover:underline">{{ title }}</RouterLink>
   </div>
 </template>
 <style scoped>

@@ -1,18 +1,32 @@
 <template>
-  <component :is="href ? 'a' : 'button'" :href="href || null" class="btn" :class="classes">
+  <component :is="href ? 'a' : 'button'" :href="href || null" class="btn" :class="computedClasses">
     {{ title }}
   </component>
 </template>
 <script setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   href: {
     type: String
+  },
+  size: {
+    type: String,
+    default: 'medium' // Add a default size if needed
   },
   title: {
     type: String,
     default: 'Button'
   },
-  classes: Array
+  classes: {
+    type: Array,
+    default: () => []
+  }
+})
+
+const computedClasses = computed(() => {
+  const sizeClass = `btn-${props.size}` // Create a class based on size prop
+  return [sizeClass, ...props.classes] // Combine size class with provided classes
 })
 </script>
 <style scoped>
@@ -24,6 +38,12 @@ defineProps({
   align-items: center;
   font-size: 14px;
   transition: var(--transition);
+}
+
+.btn-small {
+  padding: 6px 8px;
+  font-size: 12px;
+  border-radius: 6px;
 }
 
 .btn:focus,

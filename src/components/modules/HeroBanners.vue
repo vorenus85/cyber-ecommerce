@@ -11,7 +11,11 @@
             {{ banner.subTitle }}
           </template>
           <template #btn>
-            <Button :class="'btn-secondary'" :href="banner.btnUrl" :title="banner.btn"></Button>
+            <MainButton
+              :class="'btn-secondary'"
+              :href="banner.btnUrl"
+              :title="banner.btn"
+            ></MainButton>
           </template>
           <template #image>
             <picture>
@@ -28,7 +32,7 @@
 <script setup>
 import HeroBanner from '@/components/modules/HeroBanner.vue'
 import { useImageUrl } from '@/composables/useImageUrl.js'
-import Button from './Button.vue'
+import MainButton from './MainButton.vue'
 
 const banners = [
   {

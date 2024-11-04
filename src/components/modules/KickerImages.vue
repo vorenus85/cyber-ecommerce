@@ -1,6 +1,6 @@
 <script setup>
 import KickerImage from '@/components/modules/KickerImage.vue'
-import Button from '@/components/modules/Button.vue'
+import MainButton from '@/components/modules/MainButton.vue'
 // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination } from 'vue3-carousel'
@@ -90,11 +90,11 @@ const carouselConfig = {
             <p>{{ banner.description }}</p>
           </template>
           <template #btn v-if="banner?.btn">
-            <Button
+            <MainButton
               :classes="['btn-secondary', 'kicker-images-btn']"
               :href="banner?.btnUrl"
               :title="banner?.btn"
-            ></Button>
+            ></MainButton>
           </template>
         </KickerImage>
       </Slide>

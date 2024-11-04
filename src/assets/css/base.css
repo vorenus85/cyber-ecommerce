@@ -89,6 +89,10 @@ a:hover {
   opacity: 0.9;
 }
 
+strong {
+  font-weight: 500;
+}
+
 .module-head {
   font-size: 1.5rem;
   margin-bottom: 2rem;

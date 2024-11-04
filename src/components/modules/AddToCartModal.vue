@@ -20,8 +20,8 @@
             </div>
           </div>
           <div class="p-3 mt-2 text-center flex justify-between">
-            <Button :class="'btn-secondary'" :title="'Continue'" @click="onToggle" />
-            <Button :class="'btn-primary'" :title="'To cart'" :key="'#'" />
+            <MainButton :class="'btn-secondary'" :title="'Continue'" @click="onToggle" />
+            <MainButton :class="'btn-primary'" :title="'To cart'" :key="'#'" />
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@
 </template>
 <script setup>
 import { useCartStore } from '@/stores/useCartStore'
-import Button from './Button.vue'
+import MainButton from './MainButton.vue'
 import ProductImage from './ProductCard/ProductImage.vue'
 import ProductTitle from './ProductCard/ProductTitle.vue'
 
@@ -46,7 +46,8 @@ const onToggle = () => {
   .product-title {
     display: flex;
     padding-left: 1rem;
-    align-items: center;
+    text-align: left;
+    line-height: 1.2;
   }
 }
 

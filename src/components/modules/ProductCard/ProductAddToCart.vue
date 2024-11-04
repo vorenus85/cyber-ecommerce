@@ -1,10 +1,10 @@
 <script setup>
-import Button from '@/components/modules/Button.vue'
+import MainButton from '@/components/modules/MainButton.vue'
 </script>
 
 <template>
   <div class="product-add-to-card w-full">
-    <Button
+    <MainButton
       @click="$emit('addToCart')"
       :classes="['add-to-cart', 'btn-primary', 'btn-block']"
       :title="'Buy Now'"
