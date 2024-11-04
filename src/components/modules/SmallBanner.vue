@@ -1,9 +1,11 @@
 <template>
-  <div class="small-banner">
+  <div
+    class="small-banner relative overflow-hidden flex gap-6 justify-center items-center flex-col"
+  >
     <div class="small-banner-image">
       <slot name="image" />
     </div>
-    <div class="small-banner-text-contents">
+    <div class="small-banner-text-contents flex gap-6 justify-center items-center flex-col">
       <div class="small-banner-title">
         <slot name="title" />
       </div>
@@ -16,22 +18,7 @@
 </template>
 <style>
 .small-banner {
-  display: flex;
   padding: 40px 16px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  align-self: stretch;
-}
-
-.small-banner-text-contents {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  align-self: stretch;
 }
 
 .small-banner-item-1 {

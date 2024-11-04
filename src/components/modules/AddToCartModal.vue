@@ -8,7 +8,7 @@
       <div class="fixed w-5/6 max-w-lg p-3 rounded-xl shadow-lg bg-white cart-modal">
         <div>
           <div class="text-center p-3 flex-auto justify-center leading-6">
-            <h2 class="text-2xl py-4">Product added to cart!</h2>
+            <h2 class="text-2xl py-3 mb-4">Product added to cart!</h2>
             <div class="flex cart-product-snapshot">
               <ProductImage
                 :image-thumb="cartStore.actuallyAdded?.imageThumb"
@@ -49,6 +49,11 @@ const onToggle = () => {
     text-align: left;
     line-height: 1.2;
   }
+}
+
+.cart-modal h2 {
+  background: #f6f6f6;
+  color: #000;
 }
 
 .fade-enter,

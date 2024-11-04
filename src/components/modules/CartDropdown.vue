@@ -1,5 +1,5 @@
 <template>
-  <div class="cart-dropdown">
+  <div class="cart-dropdown absolute">
     <template v-for="item in cartStore.cart" :key="item.id">
       <div class="cart-dropdown-snapshot flex mb-3">
         <div class="cart-dropdown-snapshot-left">
@@ -53,7 +53,6 @@ const removeFromCart = productId => {
 </script>
 <style lang="scss">
 .cart-dropdown {
-  position: absolute;
   top: 100%;
   right: 0;
   display: block;

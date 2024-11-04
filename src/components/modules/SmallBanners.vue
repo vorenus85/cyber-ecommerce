@@ -52,7 +52,7 @@ const smallBanners = ref([
         </template>
         <template #btn v-if="banner?.btn">
           <MainButton
-            :classes="['btn-secondary', 'small-banner-btn']"
+            :classes="['btn-secondary', 'small-banner-btn', 'w-full']"
             :href="banner?.btnUrl"
             :title="banner?.btn"
           ></MainButton>
@@ -62,15 +62,6 @@ const smallBanners = ref([
   </div>
 </template>
 <style>
-.small-banner-btn {
-  width: 100%;
-}
-
-.small-banner {
-  position: relative;
-  overflow: hidden;
-}
-
 @media (min-width: 576px) {
   .btn.small-banner-btn {
     width: initial;
@@ -105,31 +96,19 @@ const smallBanners = ref([
 
   .small-banner-item-1 {
     grid-area: 2 / 1 / 3 / 2;
+    height: 272px;
   }
 
   .small-banner-item-2 {
     grid-area: 2 / 2 / 3 / 3;
+    height: 272px;
   }
   .small-banner-item-3 {
     grid-area: 1 / 1 / 2 / 3;
+    height: 328px;
   }
   .small-banner-item-4 {
     grid-area: 1 / 3 / 3 / 5;
-  }
-
-  .small-banner-item-1 {
-    height: 272px;
-  }
-
-  .small-banner-item-2 {
-    height: 272px;
-  }
-
-  .small-banner-item-3 {
-    height: 328px;
-  }
-
-  .small-banner-item-4 {
     height: 600px;
   }
 

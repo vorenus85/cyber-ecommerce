@@ -1,5 +1,5 @@
 <template>
-  <RouterLink to="/"
+  <RouterLink to="/" aria-label="Cyber - Ecommerce"
     ><svg
       class="logo"
       xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,7 @@
 <template>
   <div class="footer-custom mb-6">
     <div class="module-body">
-      <a href="#" class="mb-3 inline-block"
+      <a href="#" class="mb-3 inline-block" aria-label="Cyber - Ecommerce"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="96"

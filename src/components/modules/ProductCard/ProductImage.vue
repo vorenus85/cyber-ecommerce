@@ -29,9 +29,16 @@ import { useImageUrl } from '@/composables/useImageUrl'
 const folder = 'products'
 const { imageUrl } = useImageUrl()
 </script>
-<style>
+<style lang="scss">
 .product-image {
   padding: 0.25rem 0;
+  img {
+    transition: var(--transition);
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
 }
 
 @media (min-width: 768px) {

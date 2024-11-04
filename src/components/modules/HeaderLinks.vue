@@ -1,6 +1,6 @@
 <script script></script>
 <template>
-  <nav class="header-links">
+  <nav class="header-links hidden lg:flex">
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/about">About</RouterLink>
     <RouterLink to="/contact-us">Contact us</RouterLink>
@@ -9,8 +9,6 @@
 </template>
 <style scoped lang="scss">
 .header-links {
-  display: none;
-
   a {
     opacity: 0.3;
     font-weight: 500;
@@ -23,7 +21,6 @@
 
 @media (min-width: 992px) {
   .header-links {
-    display: flex;
     gap: 20px;
   }
 }

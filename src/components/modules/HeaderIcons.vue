@@ -7,28 +7,25 @@ import HeaderCart from './HeaderCart.vue'
 const wishlistStore = useWishlistStore()
 </script>
 <template>
-  <div class="header-icons">
-    <button class="header-btn-favorite h-8 relative">
+  <div class="header-icons flex gap-6">
+    <button class="header-btn-favorite h-8 relative" aria-label="Wishlist">
       <iconFavorites />
-      <span class="wishlist-count red-pulse absolute" v-if="wishlistStore.wishlistCount">{{
-        wishlistStore.wishlistCount
-      }}</span>
+      <span
+        class="wishlist-count red-pulse absolute flex justify-center items-center rounded-full"
+        v-if="wishlistStore.wishlistCount"
+        >{{ wishlistStore.wishlistCount }}</span
+      >
     </button>
     <HeaderCart />
-    <button class="btn-user h-8">
+    <button class="btn-user h-8 hidden md:block" aria-label="Login">
       <iconUser />
     </button>
-    <button class="btn-mobile-menu">
+    <button class="btn-mobile-menu block lg:hidden" aria-label="Mobil menu">
       <iconMobileMenu />
     </button>
   </div>
 </template>
 <style scoped>
-.header-icons {
-  display: flex;
-  gap: 24px;
-}
-
 .red-pulse {
   box-shadow: 0 0 0 0 rgba(255, 0, 0, 1);
   transform: scale(1);
@@ -59,29 +56,7 @@ const wishlistStore = useWishlistStore()
   width: 18px;
   height: 18px;
   background: #ff0000;
-  border-radius: 100%;
   top: -3px;
   right: -3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-favorite,
-.btn-cart,
-.btn-user {
-  display: none;
-}
-
-@media (min-width: 992px) {
-  .btn-mobile-menu {
-    display: none;
-  }
-
-  .btn-favorite,
-  .btn-cart,
-  .btn-user {
-    display: block;
-  }
 }
 </style>

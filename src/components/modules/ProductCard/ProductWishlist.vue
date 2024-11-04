@@ -25,17 +25,12 @@ function toggleWishlist() {
 </script>
 
 <template>
-  <div class="product-header flex justify-end">
+  <div class="product-header flex justify-end w-full">
     <button class="btn-favorite" @click="toggleWishlist" :class="{ selected: selected }">
       <iconFavorite />
     </button>
   </div>
 </template>
-<style scoped>
-.product-header {
-  width: 100%;
-}
-</style>
 <style>
 .btn-favorite:hover svg path {
   stroke: #ff0000;

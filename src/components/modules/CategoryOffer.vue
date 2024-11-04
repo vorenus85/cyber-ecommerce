@@ -16,7 +16,7 @@
                 <img
                   class="category-offer-img"
                   :src="imageUrl(category.icon, folder)"
-                  :alt="category.title"
+                  :alt="category.name"
                   width="32"
                   height="32"
                   loading="lazy"

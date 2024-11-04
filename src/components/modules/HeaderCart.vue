@@ -1,10 +1,12 @@
 <template>
   <div class="cart-dropdown-module h-8 relative z-10">
-    <button class="header-btn-cart relative">
+    <button class="header-btn-cart relative" aria-label="Cart">
       <IconCart />
-      <span class="cart-count black-pulse absolute" v-if="cartStore.cartCount">{{
-        cartStore.cartCount
-      }}</span>
+      <span
+        class="cart-count black-pulse absolute flex justify-center items-center rounded-full"
+        v-if="cartStore.cartCount"
+        >{{ cartStore.cartCount }}</span
+      >
     </button>
     <CartDropdown v-if="cartStore.cartCount" />
   </div>
@@ -53,11 +55,7 @@ const cartStore = useCartStore()
   width: 18px;
   height: 18px;
   background: #000;
-  border-radius: 100%;
   top: -3px;
   right: -3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 </style>

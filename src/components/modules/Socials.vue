@@ -5,21 +5,14 @@ import IconInstagram from '@/components/icons/social/IconInstagram.vue'
 import IconTikTok from '@/components/icons/social/IconTikTok.vue'
 </script>
 <template>
-  <div class="social-module module">
-    <a href="#" class="social-link"><IconTwitter /></a>
-    <a href="#" class="social-link"><IconFaceBook /></a>
-    <a href="#" class="social-link"><IconTikTok /></a>
-    <a href="#" class="social-link"><IconInstagram /></a>
+  <div class="social-module module items-start flex gap-6 justify-center">
+    <a href="#" class="social-link" aria-label="Twitter - Cyber ecommerce"><IconTwitter /></a>
+    <a href="#" class="social-link" aria-label="Facebook - Cyber ecommerce"><IconFaceBook /></a>
+    <a href="#" class="social-link" aria-label="TikTok - Cyber ecommerce"><IconTikTok /></a>
+    <a href="#" class="social-link" aria-label="Instagram - Cyber ecommerce"><IconInstagram /></a>
   </div>
 </template>
 <style scoped>
-.social-module {
-  display: flex;
-  gap: 25px;
-  align-items: flex-start;
-  justify-content: center;
-}
-
 @media (min-width: 768px) {
   .social-module {
     justify-content: flex-start;

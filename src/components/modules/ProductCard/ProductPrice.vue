@@ -1,7 +1,9 @@
 <template>
   <div class="product-price-container">
-    <div class="product-discounted-price" v-if="discountedPrice">${{ discountedPrice }}</div>
-    <div class="product-price">${{ price }}</div>
+    <div class="product-discounted-price text-center line-through" v-if="discountedPrice">
+      ${{ discountedPrice }}
+    </div>
+    <div class="product-price text-center">${{ price }}</div>
   </div>
 </template>
 <script setup>
@@ -21,9 +23,7 @@ defineProps({
 }
 
 .product-price {
-  text-align: center;
   font-size: 24px;
-  font-style: normal;
   font-weight: 600;
   line-height: 24px; /* 100% */
   letter-spacing: 0.72px;
@@ -31,13 +31,10 @@ defineProps({
 }
 
 .product-discounted-price {
-  text-align: center;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: 24px; /* 100% */
   letter-spacing: 0.72px;
-  text-decoration: line-through;
   color: #919191;
 }
 </style>
