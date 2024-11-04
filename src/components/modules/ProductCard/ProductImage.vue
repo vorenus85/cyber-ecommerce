@@ -4,8 +4,8 @@
       <img
         :src="imageUrl(imageThumb, folder)"
         :alt="title"
-        width="160"
-        height="160"
+        :width="width"
+        :height="height"
         loading="lazy"
       />
     </RouterLink>
@@ -14,6 +14,14 @@
 <script setup>
 defineProps({
   imageThumb: String,
+  width: {
+    type: Number,
+    default: 160
+  },
+  height: {
+    type: Number,
+    default: 160
+  },
   title: String
 })
 

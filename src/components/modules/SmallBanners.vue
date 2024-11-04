@@ -197,10 +197,6 @@ const smallBanners = ref([
     right: -510px;
   }
 
-  .small-banner-item-3 .small-banner-title h2 {
-    font-weight: 500;
-  }
-
   .small-banner-item-3 .small-banner-image img {
     height: 343px;
     max-height: 343px;

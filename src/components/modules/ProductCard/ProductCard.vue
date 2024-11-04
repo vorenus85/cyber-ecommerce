@@ -35,6 +35,7 @@ function onToggleWishlist() {
 
 function onAddToCart() {
   cartStore.addToCart(props.product)
+  cartStore.toggleCartModal()
 }
 </script>
 <template>

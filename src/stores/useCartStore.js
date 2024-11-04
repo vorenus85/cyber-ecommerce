@@ -2,14 +2,28 @@ import { defineStore } from 'pinia'
 
 export const useCartStore = defineStore('cart', {
   state: () => ({
-    cart: [] // Array to store products with quantities
+    cart: [], // Array to store products with quantities
+    actualProduct: {
+      id: 4,
+      title: 'AirPods Max Silver',
+      price: 549,
+      discountedPrice: 425,
+      image: 'airpods_max_silver_640x640.png',
+      imageThumb: 'airpods_max_silver_160x160.png'
+    },
+    modalVisibility: true
   }),
   actions: {
+    toggleCartModal() {
+      this.modalVisibility = !this.modalVisibility
+      console.log(this.modalVisibility)
+    },
     addToCart(product) {
       const existingProduct = this.cart.find(item => item.id === product.id)
       if (existingProduct) {
         existingProduct.quantity += 1 // Increment quantity if product already exists
       } else {
+        this.actualProduct = product
         this.cart.push({ ...product, quantity: 1 }) // Add product with initial quantity of 1
       }
     },
@@ -24,12 +38,17 @@ export const useCartStore = defineStore('cart', {
         this.removeFromCart(productId) // Remove product if quantity is zero or less
       }
     },
+    clearActualProduct() {
+      this.actualProduct = null
+    },
     clearCart() {
       this.cart = []
     }
   },
   getters: {
     cartCount: state => state.cart.reduce((total, product) => total + product.quantity, 0),
+    actuallyAdded: state => state.actualProduct,
+    modalIsOpen: state => state.modalVisibility,
     getCart: state => state.cart,
     cartTotalPrice: state =>
       state.cart.reduce(
