@@ -34,8 +34,8 @@
       >
     </div>
     <div class="cart-dropdown-actions flex justify-between">
-      <MainButton :classes="['btn-secondary']" :title="'To cart'" size="small" :href="'#'" />
-      <MainButton :classes="['btn-primary']" :title="'To checkout'" size="small" :href="'#'" />
+      <MainButton variant="secondary" :title="'To cart'" size="small" :href="'#'" />
+      <MainButton variant="primary" :title="'To checkout'" size="small" :href="'#'" />
     </div>
   </div>
 </template>

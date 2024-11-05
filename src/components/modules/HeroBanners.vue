@@ -11,11 +11,7 @@
             {{ banner.subTitle }}
           </template>
           <template #btn>
-            <MainButton
-              :class="'btn-secondary'"
-              :href="banner.btnUrl"
-              :title="banner.btn"
-            ></MainButton>
+            <MainButton variant="secondary" :href="banner.btnUrl" :title="banner.btn"></MainButton>
           </template>
           <template #image>
             <picture>

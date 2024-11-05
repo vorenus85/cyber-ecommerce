@@ -18,6 +18,17 @@ const props = defineProps({
     type: String,
     default: 'Button'
   },
+  block: {
+    type: Boolean,
+    default: false
+  },
+  variant: {
+    type: String,
+    required: true,
+    validator: function (value) {
+      return ['primary', 'secondary'].includes(value)
+    }
+  },
   classes: {
     type: Array,
     default: () => []
@@ -26,7 +37,9 @@ const props = defineProps({
 
 const computedClasses = computed(() => {
   const sizeClass = `btn-${props.size}` // Create a class based on size prop
-  return [sizeClass, ...props.classes] // Combine size class with provided classes
+  const variantClass = `btn-${props.variant}`
+  const blockClass = props.block ? 'btn-block' : null
+  return [sizeClass, blockClass, variantClass, ...props.classes] // Combine size class with provided classes
 })
 </script>
 <style scoped>
@@ -41,9 +54,11 @@ const computedClasses = computed(() => {
 }
 
 .btn-small {
-  padding: 6px 8px;
+  padding: 8px;
   font-size: 12px;
   border-radius: 6px;
+  min-width: 75px;
+  font-weight: 500;
 }
 
 .btn:focus,

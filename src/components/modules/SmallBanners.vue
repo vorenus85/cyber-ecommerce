@@ -52,7 +52,9 @@ const smallBanners = ref([
         </template>
         <template #btn v-if="banner?.btn">
           <MainButton
-            :classes="['btn-secondary', 'small-banner-btn', 'w-full']"
+            variant="secondary"
+            :block="true"
+            :classes="['small-banner-btn']"
             :href="banner?.btnUrl"
             :title="banner?.btn"
           ></MainButton>

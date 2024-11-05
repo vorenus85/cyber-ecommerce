@@ -91,7 +91,8 @@ const carouselConfig = {
           </template>
           <template #btn v-if="banner?.btn">
             <MainButton
-              :classes="['btn-secondary', 'kicker-images-btn']"
+              variant="secondary"
+              :classes="['kicker-images-btn']"
               :href="banner?.btnUrl"
               :title="banner?.btn"
             ></MainButton>

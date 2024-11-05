@@ -20,8 +20,8 @@
             </div>
           </div>
           <div class="p-3 mt-2 text-center flex justify-between">
-            <MainButton :class="'btn-secondary'" :title="'Continue'" @click="onToggle" />
-            <MainButton :class="'btn-primary'" :title="'To cart'" :key="'#'" />
+            <MainButton variant="secondary" :title="'Continue'" @click="onToggle" />
+            <MainButton variant="primary" :title="'To cart'" :href="'#'" />
           </div>
         </div>
       </div>
