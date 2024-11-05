@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div v-if="cartStore.modalIsOpen && cartStore.actuallyAdded">
+    <div v-if="cartStore.modalIsOpen && cartStore.actuallyAdded" class="absolute z-50">
       <div
         @click="onToggle"
         class="fixed top-0 left-0 right-0 bg-black opacity-70 inset-0 z-0 h-full"

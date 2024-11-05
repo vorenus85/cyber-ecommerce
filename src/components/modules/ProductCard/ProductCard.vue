@@ -13,6 +13,10 @@ const props = defineProps({
   product: {
     type: Object,
     required: true
+  },
+  hideWishlist: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -41,6 +45,7 @@ function onAddToCart() {
 <template>
   <div class="product-card">
     <ProductWishlist
+      v-if="!hideWishlist"
       @toggle-wishlist="onToggleWishlist"
       :onWishlist="wishlistStore.isInWishlist(product.id)"
     />
