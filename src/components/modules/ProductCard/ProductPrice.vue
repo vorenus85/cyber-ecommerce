@@ -1,9 +1,12 @@
 <template>
   <div class="product-price-container">
-    <div class="product-discounted-price text-center line-through" v-if="discountedPrice">
-      ${{ discountedPrice }}
+    <div class="product-original-price text-center line-through" v-if="discountedPrice">
+      ${{ price }}
     </div>
-    <div class="product-price text-center">${{ price }}</div>
+    <div class="product-price text-center" :class="{ 'product-special-price': discountedPrice }">
+      <template v-if="discountedPrice">${{ discountedPrice }} </template>
+      <template v-else>${{ price }}</template>
+    </div>
   </div>
 </template>
 <script setup>
@@ -30,7 +33,7 @@ defineProps({
   color: #000;
 }
 
-.product-discounted-price {
+.product-original-price {
   font-size: 16px;
   font-weight: 500;
   line-height: 24px; /* 100% */

@@ -21,6 +21,12 @@
         ref="searchInput"
       />
     </div>
+    <div
+      class="search-results not-found absolute z-50 p-3"
+      :class="{ active: !filteredProducts.length && filteredPhrase.length > 3 }"
+    >
+      <small>Not found any product.</small>
+    </div>
     <div class="search-results absolute z-50" :class="{ active: filteredProducts.length || error }">
       <div class="search-results-products">
         <h3 class="mb-3">Search results:</h3>
@@ -157,6 +163,10 @@ const fetchProducts = async phrase => {
   transform-origin: top;
   animation-fill-mode: forwards;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.search-results.not-found {
+  padding: 0.5rem;
 }
 
 .search-results.active {
