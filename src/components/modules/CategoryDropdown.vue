@@ -80,6 +80,6 @@ defineProps({ category: Object })
 }
 
 .category-menu-item.has-unique-dropdown {
-  position: static;
+  position: static !important;
 }
 </style>
