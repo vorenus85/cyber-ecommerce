@@ -23,6 +23,7 @@
     </div>
     <div class="search-results absolute z-50" :class="{ active: filteredProducts.length || error }">
       <div class="search-results-products">
+        <h3 class="mb-3">Search results:</h3>
         <template v-for="product in filteredProducts" :key="product.id">
           <div class="search-result-snapshot flex mb-3">
             <div class="search-result-snapshot-left">
