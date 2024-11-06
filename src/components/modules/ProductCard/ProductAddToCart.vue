@@ -6,9 +6,10 @@ import MainButton from '@/components/modules/MainButton.vue'
   <div class="product-add-to-card w-full">
     <MainButton
       @click="$emit('addToCart')"
-      :block="true"
-      :classes="['add-to-cart', 'btn-primary', 'btn-block']"
+      :classes="['add-to-cart']"
       :title="'Buy Now'"
+      variant="primary"
+      block
     />
   </div>
 </template>

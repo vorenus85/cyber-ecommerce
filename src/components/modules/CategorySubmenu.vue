@@ -14,8 +14,7 @@
 defineProps({
   subCategories: Object,
   header: {
-    type: Boolean,
-    default: false
+    type: String
   }
 })
 </script>
