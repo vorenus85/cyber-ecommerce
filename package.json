@@ -1,9 +1,9 @@
 {
-  "name": "portfolio-ecommerce",
+  "name": "cyber-ecommerce",
   "version": "0.3.0",
   "private": true,
   "type": "module",
-  "homepage": "https://vorenus85.github.io/portfolio-ecommerce/",
+  "homepage": "https://vorenus85.github.io/cyber-ecommerce/",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
