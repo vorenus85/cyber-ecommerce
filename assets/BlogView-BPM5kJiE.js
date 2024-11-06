@@ -1,1 +1,0 @@
-import{U as o}from"./UnderConstruction-CeQvWpYi.js";import{c as t,a,b as s,o as r}from"./index-uExXH4sA.js";const n={class:"container py-16"},_={__name:"BlogView",setup(c){return(i,e)=>(r(),t("div",n,[e[0]||(e[0]=a("h1",{class:"page-head-title"},"Blog",-1)),s(o)]))}};export{_ as default};
