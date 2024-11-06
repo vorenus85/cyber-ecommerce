@@ -53,6 +53,7 @@ const { imageUrl } = useImageUrl()
   flex-direction: column;
   align-items: flex-start;
   gap: 48px;
+  min-height: 600px;
 
   .container {
     height: 100%;
