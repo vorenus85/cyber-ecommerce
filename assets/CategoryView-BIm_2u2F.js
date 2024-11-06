@@ -1,1 +1,0 @@
-import{U as t}from"./UnderConstruction-DL5sGOGA.js";import{c as a,a as o,b as r,o as s}from"./index-Dn32HZf6.js";const n={class:"container py-16"},d={__name:"CategoryView",setup(c){return(i,e)=>(s(),a("div",n,[e[0]||(e[0]=o("h1",{class:"page-head-title"},"Category",-1)),r(t)]))}};export{d as default};
