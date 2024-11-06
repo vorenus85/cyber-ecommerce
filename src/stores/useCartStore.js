@@ -9,7 +9,6 @@ export const useCartStore = defineStore('cart', {
   actions: {
     toggleCartModal() {
       this.modalVisibility = !this.modalVisibility
-      console.log(this.modalVisibility)
     },
     addToCart(product) {
       const existingProduct = this.cart.find(item => item.id === product.id)
