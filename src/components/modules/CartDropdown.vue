@@ -1,7 +1,7 @@
 <template>
   <div class="cart-dropdown absolute">
     <template v-for="item in cartStore.cart" :key="item.id">
-      <div class="cart-dropdown-snapshot flex mb-3">
+      <div class="cart-dropdown-snapshot flex mb-3 w-full">
         <div class="cart-dropdown-snapshot-left">
           <ProductImage
             :imageThumb="item.imageThumb"
@@ -12,7 +12,7 @@
             class="p-0 w-10"
           />
         </div>
-        <div class="cart-dropdown-snapshot-right pl-2">
+        <div class="cart-dropdown-snapshot-right pl-2 w-full">
           <div class="cart-dropdown-snapshot-title">
             <ProductTitle :title="item.title" :href="'#'" />
           </div>

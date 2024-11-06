@@ -27,6 +27,10 @@ import CategoryMenu from '@/components/modules/CategoryMenu.vue'
   justify-content: space-between;
 }
 
+.header.sticky {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
 .header-module .logo {
   color: #000;
 }
