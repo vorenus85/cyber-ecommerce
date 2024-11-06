@@ -15,7 +15,7 @@ const kickerImages = ref([
     alt: 'Popular Products',
     description:
       'iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.',
-    image: 'popular_products.png',
+    image: 'popular_products.webp',
     btn: 'Shop Now',
     btnUrl: '#'
   },
@@ -24,7 +24,7 @@ const kickerImages = ref([
     alt: 'Ipad Pro',
     description:
       'iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.',
-    image: 'ipad_pro.png',
+    image: 'ipad_pro.webp',
     btn: 'Shop Now',
     btnUrl: '#'
   },
@@ -33,7 +33,7 @@ const kickerImages = ref([
     alt: 'Samsung Galaxy',
     description:
       'iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.',
-    image: 'samsung_galaxy.png',
+    image: 'samsung_galaxy.webp',
     btn: 'Shop Now',
     btnUrl: '#'
   },
@@ -42,7 +42,7 @@ const kickerImages = ref([
     alt: 'Macbook Pro',
     description:
       'iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of use.',
-    image: 'macbook_pro.png',
+    image: 'macbook_pro.webp',
     btn: 'Shop Now',
     btnUrl: '#'
   }

@@ -72,16 +72,16 @@ const categoryItems = shallowRef([
         title: 'Samsung Galaxy Watch6 Classic 47mm Black',
         price: 369,
         discountedPrice: 200,
-        image: 'samsung_galaxy_watch_6_classic_640x640.png',
-        imageThumb: 'samsung_galaxy_watch_6_classic_160x160.png'
+        image: 'samsung_galaxy_watch_6_classic_640x640.webp',
+        imageThumb: 'samsung_galaxy_watch_6_classic_160x160.webp'
       },
       {
         id: 3,
         title: 'Apple Watch Series 9 GPS 41mm Starlight Aluminium Case',
         price: 399,
         discountedPrice: 250,
-        image: 'apple_watch_series_9_640x640.png',
-        imageThumb: 'apple_watch_series_9_160x160.png'
+        image: 'apple_watch_series_9_640x640.webp',
+        imageThumb: 'apple_watch_series_9_160x160.webp'
       }
     ],
     byBrands: [

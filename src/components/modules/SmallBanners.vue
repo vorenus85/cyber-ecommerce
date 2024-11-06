@@ -11,27 +11,27 @@ const smallBanners = ref([
     title: 'Apple AirPods <span>Max</span>',
     alt: 'Apple AirPods Max',
     description: "Computational audio. Listen, it's powerful",
-    image: 'apple_airpods_max.png'
+    image: 'apple_airpods_max.webp'
   },
   {
     title: 'Apple Vision <span>Pro</span>',
     alt: 'Apple Vision Pro',
     description: 'An immersive way to experience entertainment',
-    image: 'apple_vision_pro.png'
+    image: 'apple_vision_pro.webp'
   },
   {
     title: 'Playstation <span>5</span>',
     alt: 'Playstation 5',
     description:
       'Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation experience.',
-    image: 'playstation.png'
+    image: 'playstation.webp'
   },
   {
     title: 'Macbook <span>Air</span>',
     alt: 'Macbook Air',
     description:
       'The new 15‑inch MacBook Air makes room for more of what you love with a spacious Liquid Retina display.',
-    image: 'macbook_air.png',
+    image: 'macbook_air.webp',
     btn: 'Shop Now',
     btnUrl: '#'
   }

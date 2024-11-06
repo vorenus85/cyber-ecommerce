@@ -36,8 +36,8 @@ const banners = [
     title: 'IPhone 14 <span>Pro</span>',
     subTitle: 'Created to change everything for the better. For everyone',
     alt: 'IPhone 14 Pro',
-    image: 'hero_banner_desktop.png',
-    imageMobile: 'hero_banner_mobile.png',
+    image: 'hero_banner_desktop.webp',
+    imageMobile: 'hero_banner_mobile.webp',
     btn: 'Shop Now',
     btnUrl: '#'
   }
