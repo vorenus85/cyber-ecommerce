@@ -47,10 +47,6 @@ defineProps({ category: Object })
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.category-menu-item.has-unique-dropdown {
-  position: static;
-}
-
 .category-unique-submenu .category-submenu {
   position: static;
   visibility: initial;
@@ -81,5 +77,9 @@ defineProps({ category: Object })
   transform: scale(1, 1);
   visibility: visible;
   opacity: 1;
+}
+
+.category-menu-item.has-unique-dropdown {
+  position: static;
 }
 </style>
