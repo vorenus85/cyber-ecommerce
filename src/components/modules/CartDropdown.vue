@@ -5,14 +5,14 @@
         <div class="cart-dropdown-snapshot-left">
           <ProductImage
             :imageThumb="item.imageThumb"
-            :width="'40'"
-            :height="'40'"
+            :width="parseInt(40)"
+            :height="parseInt(40)"
             :title="item.title"
             :href="'#'"
             class="p-0 w-10"
           />
         </div>
-        <div class="cart-dropdown-snapshot-right">
+        <div class="cart-dropdown-snapshot-right pl-2">
           <div class="cart-dropdown-snapshot-title">
             <ProductTitle :title="item.title" :href="'#'" />
           </div>
@@ -78,9 +78,5 @@ const removeFromCart = productId => {
   line-height: 1;
   font-size: 13px;
   font-weight: 300;
-}
-
-.cart-dropdown-snapshot-right {
-  padding-left: 1rem;
 }
 </style>
