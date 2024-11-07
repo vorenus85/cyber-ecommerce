@@ -5,5 +5,5 @@
   </div>
 </template>
 <script setup>
-import UnderConstruction from '@/components/modules/UnderConstruction.vue'
+import UnderConstruction from '@/components/modules/Common/UnderConstruction.vue'
 </script>
