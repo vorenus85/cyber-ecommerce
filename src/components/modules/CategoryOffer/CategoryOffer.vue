@@ -13,14 +13,7 @@
           <Slide v-for="category in categoryItems" :key="category.id">
             <RouterLink to="#" class="category-menu-item">
               <div class="category-offer-box flex flex-col items-center">
-                <img
-                  class="category-offer-img"
-                  :src="imageUrl(category.icon, folder)"
-                  :alt="category.name"
-                  width="32"
-                  height="32"
-                  loading="lazy"
-                />
+                <component class="category-offer-img" :is="category.icon"></component>
                 <span class="category-offer-name">{{ category.name }}</span>
               </div>
             </RouterLink>
@@ -31,29 +24,14 @@
   </section>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, shallowRef } from 'vue'
 // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide } from 'vue3-carousel'
 import IconArrow from '../../icons/commons/iconArrow.vue'
-import { useImageUrl } from '@/composables/useImageUrl'
-const folder = 'category-offers'
-const { imageUrl } = useImageUrl()
-
-const categoryItems = ref([
-  { name: 'Phones', id: '1', icon: 'phones.svg' },
-  { name: 'Smart Watches', id: '2', icon: 'watches.svg' },
-  { name: 'Computers', id: '3', icon: 'computers.svg' },
-  { name: 'Cameras', id: '4', icon: 'cameras.svg' },
-  { name: 'Headphones', id: '5', icon: 'headphones.svg' },
-  { name: 'Gaming', id: '6', icon: 'gaming.svg' },
-  { name: 'Phones', id: '7', icon: 'phones.svg' },
-  { name: 'Smart Watches', id: '8', icon: 'watches.svg' },
-  { name: 'Computers', id: '9', icon: 'computers.svg' },
-  { name: 'Cameras', id: '10', icon: 'cameras.svg' },
-  { name: 'Headphones', id: '11', icon: 'headphones.svg' },
-  { name: 'Gaming', id: '12', icon: 'gaming.svg' }
-])
+import { useCategoryData } from '@/composables/useCategoryData.js'
+const { categoryData } = useCategoryData()
+const categoryItems = shallowRef(categoryData())
 
 const carouselRef = ref()
 

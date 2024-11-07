@@ -1,4 +1,5 @@
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
     <g clip-path="url(#clip0_153_296)">
       <path
         d="M30 12H18C14.6863 12 12 14.6863 12 18V30C12 33.3137 14.6863 36 18 36H30C33.3137 36 36 33.3137 36 30V18C36 14.6863 33.3137 12 30 12Z"
@@ -55,3 +56,4 @@
       </clipPath>
     </defs>
   </svg>
+</template>
