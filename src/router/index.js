@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import { useMobileMenuStore } from '@/stores/useMobileMenuStore'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,13 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     }
   ]
+})
+
+// Register global navigation guard
+router.beforeEach((to, from, next) => {
+  const menuStore = useMobileMenuStore()
+  menuStore.closeMenu() // Close mobile menu on every route change
+  next()
 })
 
 export default router

@@ -1,10 +1,15 @@
-<script script></script>
+<script setup>
+import { useMenuData } from '@/composables/useMenuData'
+import { ref } from 'vue'
+const { menuData } = useMenuData()
+
+const menuItems = ref(menuData())
+</script>
 <template>
   <nav class="header-links hidden lg:flex">
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-    <RouterLink to="/contact-us">Contact us</RouterLink>
-    <RouterLink to="/blog">Blog</RouterLink>
+    <RouterLink :to="menu.path" v-for="menu in menuItems" :key="menu.id">{{
+      menu.title
+    }}</RouterLink>
   </nav>
 </template>
 <style scoped lang="scss">

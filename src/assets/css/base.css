@@ -112,5 +112,10 @@ strong {
   line-height: 24px; /* 100% */
 }
 
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
 @media (min-height: 992px) {
 }

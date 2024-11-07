@@ -3,8 +3,14 @@ import iconFavorites from '@/components/icons/commons/iconFavorites.vue'
 import iconUser from '@/components/icons/commons/iconUser.vue'
 import iconMobileMenu from '@/components/icons/commons/iconMobileMenu.vue'
 import { useWishlistStore } from '@/stores/useWishlistStore.js'
+import { useMobileMenuStore } from '@/stores/useMobileMenuStore'
 import HeaderCart from './HeaderCart.vue'
 const wishlistStore = useWishlistStore()
+const mobileMenuStore = useMobileMenuStore()
+
+function toggle() {
+  mobileMenuStore.toggleMenu()
+}
 </script>
 <template>
   <div class="header-icons flex gap-6">
@@ -20,7 +26,7 @@ const wishlistStore = useWishlistStore()
     <button class="btn-user h-8 hidden md:block" aria-label="Login">
       <iconUser />
     </button>
-    <button class="btn-mobile-menu block lg:hidden" aria-label="Mobil menu">
+    <button class="btn-mobile-menu block lg:hidden" aria-label="Mobil menu" @click="toggle">
       <iconMobileMenu />
     </button>
   </div>

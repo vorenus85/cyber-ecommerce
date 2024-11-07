@@ -1,5 +1,5 @@
 <template>
-  <Vue3Lottie :animationData="underConstruction" :height="500" :width="500" />
+  <Vue3Lottie :animationData="underConstruction" :height="500" :width="500" class="img-fluid" />
 </template>
 <script>
 import { Vue3Lottie } from 'vue3-lottie'
