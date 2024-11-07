@@ -67,7 +67,7 @@ import iconSearch from '@/components/icons/commons/iconSearch.vue'
 import { ref } from 'vue'
 import ProductImage from './ProductCard/ProductImage.vue'
 import ProductTitle from './ProductCard/ProductTitle.vue'
-import MainButton from './MainButton.vue'
+import MainButton from './Common/MainButton.vue'
 
 const products = ref([]) // Stores the memoized full product list
 const memoizedProducts = ref(null) // Caches the first server response

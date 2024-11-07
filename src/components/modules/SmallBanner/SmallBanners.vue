@@ -1,6 +1,6 @@
 <script setup>
-import SmallBanner from '@/components/modules/SmallBanner.vue'
-import MainButton from '@/components/modules/MainButton.vue'
+import SmallBannerItem from '@/components/modules/SmallBanner/SmallBannerItem.vue'
+import MainButton from '@/components/modules/Common/MainButton.vue'
 import { ref } from 'vue'
 import { useImageUrl } from '@/composables/useImageUrl'
 const folder = 'small-banners'
@@ -40,7 +40,7 @@ const smallBanners = ref([
 <template>
   <div class="small-banners-section">
     <template v-for="(banner, index) in smallBanners" :key="banner.image">
-      <SmallBanner :class="`small-banner-item-${index + 1}`">
+      <SmallBannerItem :class="`small-banner-item-${index + 1}`">
         <template #image>
           <img :src="imageUrl(banner.image, folder)" :alt="banner.alt" loading="lazy" />
         </template>
@@ -59,7 +59,7 @@ const smallBanners = ref([
             :title="banner?.btn"
           ></MainButton>
         </template>
-      </SmallBanner>
+      </SmallBannerItem>
     </template>
   </div>
 </template>

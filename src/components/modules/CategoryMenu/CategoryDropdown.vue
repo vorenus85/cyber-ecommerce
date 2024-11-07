@@ -26,7 +26,7 @@
 </template>
 <script setup>
 import CategorySubmenu from './CategorySubmenu.vue'
-import ProductCard from './ProductCard/ProductCard.vue'
+import ProductCard from '../ProductCard/ProductCard.vue'
 defineProps({ category: Object })
 </script>
 <style lang="scss">

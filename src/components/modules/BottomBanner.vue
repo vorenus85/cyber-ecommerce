@@ -14,7 +14,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import MainButton from './MainButton.vue'
+import MainButton from './Common/MainButton.vue'
 import { useImageUrl } from '@/composables/useImageUrl.js'
 import { useIntersectionObserver } from '@/composables/useIntersectionObserver'
 

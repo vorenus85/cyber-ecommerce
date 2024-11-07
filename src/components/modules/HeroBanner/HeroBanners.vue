@@ -26,9 +26,9 @@
   </section>
 </template>
 <script setup>
-import HeroBanner from '@/components/modules/HeroBanner.vue'
+import HeroBanner from '@/components/modules/HeroBanner/HeroBanner.vue'
 import { useImageUrl } from '@/composables/useImageUrl.js'
-import MainButton from './MainButton.vue'
+import MainButton from '@/components/modules/Common/MainButton.vue'
 
 const banners = [
   {

@@ -1,9 +1,9 @@
 <script setup>
-import Logo from '@/components/modules/Logo.vue'
+import Logo from '@/components/modules/Common/Logo.vue'
 import HeaderLinks from '@/components/modules/HeaderLinks.vue'
 import SearchInput from '@/components/modules/SearchInput.vue'
 import HeaderIcons from '@/components/modules/HeaderIcons.vue'
-import CategoryMenu from '@/components/modules/CategoryMenu.vue'
+import CategoryMenu from '@/components/modules/CategoryMenu/CategoryMenu.vue'
 </script>
 <template>
   <div class="header sticky top-0 bg-white z-10">

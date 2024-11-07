@@ -43,7 +43,7 @@
 import { useCartStore } from '@/stores/useCartStore'
 import ProductImage from './ProductCard/ProductImage.vue'
 import ProductTitle from './ProductCard/ProductTitle.vue'
-import MainButton from './MainButton.vue'
+import MainButton from './Common/MainButton.vue'
 
 const cartStore = useCartStore()
 

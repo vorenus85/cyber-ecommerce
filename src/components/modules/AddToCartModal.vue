@@ -30,7 +30,7 @@
 </template>
 <script setup>
 import { useCartStore } from '@/stores/useCartStore'
-import MainButton from './MainButton.vue'
+import MainButton from './Common/MainButton.vue'
 import ProductImage from './ProductCard/ProductImage.vue'
 import ProductTitle from './ProductCard/ProductTitle.vue'
 

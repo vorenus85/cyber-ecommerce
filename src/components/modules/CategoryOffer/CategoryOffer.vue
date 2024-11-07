@@ -35,7 +35,7 @@ import { ref } from 'vue'
 // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide } from 'vue3-carousel'
-import IconArrow from '../icons/commons/iconArrow.vue'
+import IconArrow from '../../icons/commons/iconArrow.vue'
 import { useImageUrl } from '@/composables/useImageUrl'
 const folder = 'category-offers'
 const { imageUrl } = useImageUrl()

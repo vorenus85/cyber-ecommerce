@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import FooterCustom from '@/components/modules/FooterCustom.vue'
-import Socials from '@/components/modules/Socials.vue'
+import FooterCustom from '@/components/modules/FooterCustomContent.vue'
+import Socials from '@/components/modules/Common/Socials.vue'
 import FooterInformation from '@/components/modules/FooterInformation.vue'
 
 const servicesTitle = 'Services'

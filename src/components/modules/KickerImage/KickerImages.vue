@@ -1,6 +1,6 @@
 <script setup>
-import KickerImage from '@/components/modules/KickerImage.vue'
-import MainButton from '@/components/modules/MainButton.vue'
+import KickerImage from '@/components/modules/KickerImage/KickerImage.vue'
+import MainButton from '@/components/modules/Common/MainButton.vue'
 // If you are using PurgeCSS, make sure to whitelist the carousel CSS classes
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination } from 'vue3-carousel'
