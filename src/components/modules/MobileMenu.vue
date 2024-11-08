@@ -88,5 +88,6 @@ function toggle() {
 .mobile-menu-item {
   padding: 0.25rem 0.5rem;
   text-align: right;
+  font-size: 1.25rem;
 }
 </style>
