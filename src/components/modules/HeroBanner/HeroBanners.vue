@@ -15,8 +15,8 @@
           </template>
           <template #image>
             <picture>
-              <source media="(max-width: 768px)" :srcset="imageUrl(banner.imageMobile, folder)" />
-              <source media="(min-width: 767px)" :srcset="imageUrl(banner.image, folder)" />
+              <source media="(max-width: 575px)" :srcset="imageUrl(banner.imageMobile, folder)" />
+              <source media="(min-width: 576px)" :srcset="imageUrl(banner.image, folder)" />
               <img :alt="banner.alt" :src="imageUrl(banner.image, folder)" />
             </picture>
           </template>
