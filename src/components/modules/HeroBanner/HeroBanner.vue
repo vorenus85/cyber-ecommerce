@@ -35,7 +35,7 @@
 
 .hero-banner-title {
   font-size: 72px;
-  line-height: 72px; /* 75% */
+  line-height: 1;
   letter-spacing: -0.96px;
   color: #fff;
 }
