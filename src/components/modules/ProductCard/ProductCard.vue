@@ -6,7 +6,6 @@ import ProductPrice from '@/components/modules/ProductCard/ProductPrice.vue'
 import ProductAddToCart from '@/components/modules/ProductCard/ProductAddToCart.vue'
 import { useWishlistStore } from '@/stores/useWishlistStore.js'
 import { useCartStore } from '@/stores/useCartStore.js'
-import { computed } from 'vue'
 
 // Props passed into the component
 const props = defineProps({
@@ -20,15 +19,12 @@ const props = defineProps({
   }
 })
 
-// Computed properties for reactive data
-const isProductInWishlist = computed(() => wishlistStore.isInWishlist(props.product.id.value))
-
 const wishlistStore = useWishlistStore()
 const cartStore = useCartStore()
 
 function onToggleWishlist() {
-  if (isProductInWishlist.value) {
-    wishlistStore.removeFromWishlist(props.product.id.value)
+  if (wishlistStore.isInWishlist(props.product.id)) {
+    wishlistStore.removeFromWishlist(props.product.id)
   } else {
     wishlistStore.addToWishlist(props.product)
   }
