@@ -32,7 +32,7 @@ const menuItems = ref(menuData())
 
 @media (min-width: 1200px) {
   .header-links {
-    gap: 52px;
+    gap: 45px;
   }
 }
 </style>

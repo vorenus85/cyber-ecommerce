@@ -5,7 +5,7 @@ export default {
     container: {
       center: true,
       padding: {
-        DEFAULT: '1rem'
+        DEFAULT: '.5rem'
       },
       /* deafults
       screens: {
