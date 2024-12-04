@@ -1,6 +1,6 @@
 <template>
-  <nav class="breadcrumb flex py-6">
-    <ol class="inline-flex items-center space-x-4 rtl:space-x-reverse">
+  <nav class="breadcrumb py-3 sm:py-6 flex">
+    <ol class="items-center space-x-4 rtl:space-x-reverse hidden md:inline-flex">
       <li v-for="(item, index) in navItems" :key="item.id">
         <div class="flex items-center">
           <IconArrow
