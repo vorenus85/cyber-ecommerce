@@ -2,11 +2,11 @@
   <nav class="flex items-center justify-center space-x-2">
     <!-- Previous Button -->
     <button
-      class="px-3 py-1 rounded-md border bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+      class="p-1 rounded-md bg-white text-gray-700 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
       :disabled="currentPage === 1"
       @click="goToPage(currentPage - 1)"
     >
-      <IconArrow />
+      <IconArrow :orientation="'left'" />
     </button>
 
     <!-- Page Numbers -->
@@ -15,8 +15,8 @@
       :key="page"
       class="px-3 py-1 rounded-md border"
       :class="{
-        'bg-blue-500 text-white': page === currentPage,
-        'bg-gray-200 text-gray-700 hover:bg-gray-300': page !== currentPage
+        'bg-black text-white': page === currentPage,
+        'bg-gray-200 text-black hover:bg-gray-300': page !== currentPage
       }"
       @click="goToPage(page)"
     >
@@ -25,11 +25,11 @@
 
     <!-- Next Button -->
     <button
-      class="px-3 py-1 rounded-md border bg-gray-200 text-gray-700 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
+      class="p-1 rounded-md bg-white text-gray-700 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
       :disabled="currentPage === totalPages"
       @click="goToPage(currentPage + 1)"
     >
-      Next
+      <IconArrow :orientation="'right'" />
     </button>
   </nav>
 </template>

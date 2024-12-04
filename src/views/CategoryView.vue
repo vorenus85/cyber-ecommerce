@@ -9,7 +9,12 @@
           <Dropdown id="sort-list" :options="sortOptions" />
         </div>
         <ProductModule :error="error" :loading="loading" :products="products" class="py-3" />
-        <Pagination :totalItems="totalItemCount" :itemsPerPage="limit" @pageChange="onPageChange" />
+        <Pagination
+          :totalItems="totalItemCount"
+          :itemsPerPage="limit"
+          @pageChange="onPageChange"
+          class="mb-3"
+        />
       </div>
     </div>
   </div>

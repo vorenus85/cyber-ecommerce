@@ -1,10 +1,10 @@
 <template>
   <div class="product-module">
     <div v-if="error" class="error">{{ error }}</div>
-    <div v-else-if="loading" class="loading products module">
+    <div v-else-if="loading" class="loading products mb-6">
       <SkeletonCard v-for="item in products" :key="item" />
     </div>
-    <div v-else class="products module">
+    <div v-else class="products mb-6">
       <ProductCard v-for="product in products" :product="product" :key="product.id" />
     </div>
   </div>
