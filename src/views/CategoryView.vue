@@ -45,10 +45,10 @@ export default {
 
     const sortOptions = ref([
       { id: 1, title: 'By rating', sortBy: 'rating' },
-      { id: 2, title: 'By name ASC', sortBy: 'nameAsc' },
-      { id: 3, title: 'By name DESC', sortBy: 'nameDesc' },
-      { id: 4, title: 'By price ASC', sortBy: 'priceAsc' },
-      { id: 5, title: 'By price DESC', sortBy: 'priceDesc' }
+      { id: 2, title: 'By name, A-Z', sortBy: 'nameAsc' },
+      { id: 3, title: 'By name, Z-A', sortBy: 'nameDesc' },
+      { id: 4, title: 'By price, low to high', sortBy: 'priceAsc' },
+      { id: 5, title: 'By price, high to low', sortBy: 'priceDesc' }
     ])
 
     const navigationItems = ref([
