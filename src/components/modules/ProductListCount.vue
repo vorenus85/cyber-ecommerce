@@ -1,5 +1,5 @@
 <template>
-  <div class="product-list-count flex items-center py-3">
+  <div class="product-list-count flex items-center">
     <span class="label text-md font-normal">Selected Products:</span>
     <span class="number text-xl ml-2">{{ count }}</span>
   </div>

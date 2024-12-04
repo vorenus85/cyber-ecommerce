@@ -1,20 +1,14 @@
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    :width="size"
+    :height="size"
     :viewBox="`0 0 ${size} ${size}`"
-    :width="computedSize"
-    :height="computedSize"
+    fill="none"
     class="icon-arrow"
     :class="`orientation-${orientation}`"
   >
-    <path
-      d="M8 4l8 8-8 8"
-      fill="none"
-      :stroke="color"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
+    <path d="M9 6L15 12L9 18" :stroke="color" />
   </svg>
 </template>
 <script setup>
@@ -23,7 +17,7 @@ import { computed } from 'vue'
 const props = defineProps({
   size: {
     type: Number,
-    default: 32
+    default: 24
   },
   color: {
     type: String,
@@ -44,12 +38,13 @@ const computedSize = computed(() => {
 </script>
 <style lang="scss">
 .orientation {
+  transform-origin: center center;
   &-left {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
 
   &-top {
-    transform: rotate(90deg);
+    transform: rotate(270deg);
   }
 
   &-right {
@@ -57,7 +52,7 @@ const computedSize = computed(() => {
   }
 
   &-bottom {
-    transform: rotate(270deg);
+    transform: rotate(90deg);
   }
 }
 </style>
