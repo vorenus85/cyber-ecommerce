@@ -1,8 +1,63 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    :viewBox="`0 0 ${size} ${size}`"
+    :width="computedSize"
+    :height="computedSize"
+    class="icon-arrow"
+    :class="`orientation-${orientation}`"
+  >
     <path
-      d="M21.3333 27.6667C21.0679 27.6679 20.8132 27.5622 20.6267 27.3733L9.95999 16.7067C9.57006 16.3162 9.57006 15.6838 9.95999 15.2933L20.6267 4.62667C21.0207 4.25952 21.6347 4.27035 22.0155 4.65117C22.3963 5.03199 22.4071 5.64599 22.04 6.04L12.08 16L22.04 25.96C22.4299 26.3504 22.4299 26.9829 22.04 27.3733C21.8535 27.5622 21.5987 27.6679 21.3333 27.6667Z"
-      fill="currentColor"
+      d="M8 4l8 8-8 8"
+      fill="none"
+      :stroke="color"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
     />
   </svg>
 </template>
+<script setup>
+import { computed } from 'vue'
+
+const props = defineProps({
+  size: {
+    type: Number,
+    default: 32
+  },
+  color: {
+    type: String,
+    default: '#2E2E2E'
+  },
+  orientation: {
+    type: String,
+    default: 'right',
+    validator: function (value) {
+      return ['left', 'top', 'right', 'bottom'].includes(value)
+    }
+  }
+})
+
+const computedSize = computed(() => {
+  return props.size * 0.75
+})
+</script>
+<style lang="scss">
+.orientation {
+  &-left {
+    transform: rotate(0deg);
+  }
+
+  &-top {
+    transform: rotate(90deg);
+  }
+
+  &-right {
+    transform: rotate(0deg);
+  }
+
+  &-bottom {
+    transform: rotate(270deg);
+  }
+}
+</style>
