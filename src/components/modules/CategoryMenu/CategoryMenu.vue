@@ -7,7 +7,7 @@
             class="category-menu-item"
             :class="{ 'has-unique-dropdown': category.uniqueDropdown }"
           >
-            <RouterLink to="#" class="category-menu-link flex gap-2">
+            <RouterLink to="/catalog" class="category-menu-link flex gap-2">
               <component class="category-menu-img" :is="category.smallIcon"></component
               >{{ category.name }}
             </RouterLink>

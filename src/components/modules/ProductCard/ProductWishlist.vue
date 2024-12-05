@@ -7,7 +7,7 @@ const props = defineProps({
 })
 
 // Define the emit function for event emitting
-const emit = defineEmits(['toggleWishlist'])
+const emit = defineEmits(['toggle-wishlist'])
 
 const selected = ref(props.onWishlist)
 
@@ -20,7 +20,7 @@ watch(
 
 function toggleWishlist() {
   selected.value = !selected.value
-  emit('toggleWishlist') // Use the `emit` function directly
+  emit('toggle-wishlist') // Use the `emit` function directly
 }
 </script>
 

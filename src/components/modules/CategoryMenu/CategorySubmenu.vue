@@ -4,7 +4,7 @@
       <strong>{{ header }}</strong>
     </li>
     <li v-for="subCategory in subCategories" :key="subCategory.id">
-      <RouterLink to="#" class="category-menu-link category-submenu-link">{{
+      <RouterLink to="/catalog" class="category-menu-link category-submenu-link">{{
         subCategory.name
       }}</RouterLink>
     </li>

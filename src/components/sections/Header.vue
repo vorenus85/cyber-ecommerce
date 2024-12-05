@@ -6,7 +6,7 @@ import HeaderIcons from '@/components/modules/HeaderIcons.vue'
 import CategoryMenu from '@/components/modules/CategoryMenu/CategoryMenu.vue'
 </script>
 <template>
-  <div class="header sticky top-0 bg-white z-10">
+  <div class="header sticky top-0 bg-white z-20">
     <div class="header-top container header-module">
       <Logo />
       <SearchInput />

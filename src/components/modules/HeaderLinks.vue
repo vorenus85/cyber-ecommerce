@@ -17,6 +17,9 @@ const menuItems = ref(menuData())
   a {
     opacity: 0.3;
     font-weight: 500;
+    &:hover {
+      opacity: 1;
+    }
   }
 
   a.router-link-exact-active {
