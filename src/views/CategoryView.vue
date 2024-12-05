@@ -31,6 +31,7 @@ import Pagination from '@/components/modules/Pagination.vue'
 import Breadcrumb from '@/components/modules/Breadcrumb.vue'
 import ProductListCount from '@/components/modules/ProductListCount.vue'
 import Dropdown from '@/components/modules/Dropdown.vue'
+import { mockApi } from '@/api/mockApi'
 
 export default {
   components: { ProductModule, Pagination, Breadcrumb, ProductListCount, Dropdown },
@@ -44,18 +45,19 @@ export default {
           ;[]
         })
     )
+    const page = ref(1)
     const loading = ref(true)
     const error = ref(null)
     const totalItemCount = ref(0)
-
     const defaultSortOption = ref('By rating')
+    const sort = ref('rating_asc')
 
     const sortOptions = ref([
-      { id: 1, title: 'By rating', sortBy: 'rating' },
-      { id: 2, title: 'By name, A-Z', sortBy: 'nameAsc' },
-      { id: 3, title: 'By name, Z-A', sortBy: 'nameDesc' },
-      { id: 4, title: 'By price, low to high', sortBy: 'priceAsc' },
-      { id: 5, title: 'By price, high to low', sortBy: 'priceDesc' }
+      { id: 1, title: 'By rating', sortBy: 'rating_asc' },
+      { id: 2, title: 'By name, A-Z', sortBy: 'title_asc' },
+      { id: 3, title: 'By name, Z-A', sortBy: 'title_desc' },
+      { id: 4, title: 'By price, low to high', sortBy: 'price_asc' },
+      { id: 5, title: 'By price, high to low', sortBy: 'price_desc' }
     ])
 
     const navigationItems = ref([
@@ -64,30 +66,30 @@ export default {
       { id: 3, path: '/catalog', title: 'Smartphones', active: true }
     ])
 
-    const onPageChange = page => {
-      // console.log(page)
+    const onPageChange = newPage => {
+      page.value = parseInt(newPage, 10)
+      fetchProducts()
     }
 
-    const onChangeDropdown = dropdown => {
-      // console.log(dropdown)
+    const onChangeDropdown = newSort => {
+      sort.value = newSort.sortBy
+      fetchProducts()
     }
 
     const fetchProducts = async () => {
       loading.value = true
 
       try {
-        const response = await fetch(import.meta.env.VITE_PRODUCTS_ENDPOINT)
+        const response = await mockApi.getProducts({}, sort.value, page.value, limit)
 
         if (!response.ok) {
           throw new Error('Failed to load products')
         }
 
-        const data = await response.json()
-        console.log(data)
-        totalItemCount.value = data.length
-        // mocking discounted products query
-        products.value = data.slice(0, limit)
+        products.value = response.data
+        totalItemCount.value = response.total
       } catch (error) {
+        console.log(error)
         error.value = error.message
       } finally {
         loading.value = false

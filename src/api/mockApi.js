@@ -24,11 +24,20 @@ export const mockApi = {
 
         if (sort) {
           const [key, order] = sort.split('_')
-          result.sort((a, b) => {
-            if (order === 'asc') return a[key] - b[key]
-            if (order === 'desc') return b[key] - a[key]
-            return 0
-          })
+
+          if (key === 'title') {
+            result.sort((a, b) => {
+              if (order === 'asc') return a[key].localeCompare(b[key])
+              if (order === 'desc') return b[key].localeCompare(a[key])
+              return 0
+            })
+          } else {
+            result.sort((a, b) => {
+              if (order === 'asc') return a[key] - b[key]
+              if (order === 'desc') return b[key] - a[key]
+              return 0
+            })
+          }
         }
 
         // Paging
