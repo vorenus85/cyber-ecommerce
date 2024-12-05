@@ -6,7 +6,12 @@
       <div class="product-list">
         <div class="product-list-top flex justify-between py-3">
           <ProductListCount :count="totalItemCount" />
-          <Dropdown id="sort-list" :options="sortOptions" />
+          <Dropdown
+            id="sort-list"
+            :options="sortOptions"
+            :defaultOption="defaultSortOption"
+            @changeDropdown="onChangeDropdown"
+          />
         </div>
         <ProductModule :error="error" :loading="loading" :products="products" class="py-3" />
         <Pagination
@@ -43,6 +48,8 @@ export default {
     const error = ref(null)
     const totalItemCount = ref(0)
 
+    const defaultSortOption = ref('By rating')
+
     const sortOptions = ref([
       { id: 1, title: 'By rating', sortBy: 'rating' },
       { id: 2, title: 'By name, A-Z', sortBy: 'nameAsc' },
@@ -58,7 +65,11 @@ export default {
     ])
 
     const onPageChange = page => {
-      console.log(page)
+      // console.log(page)
+    }
+
+    const onChangeDropdown = dropdown => {
+      // console.log(dropdown)
     }
 
     const fetchProducts = async () => {
@@ -96,7 +107,9 @@ export default {
       onPageChange,
       products,
       navigationItems,
-      sortOptions
+      sortOptions,
+      defaultSortOption,
+      onChangeDropdown
     }
   }
 }
