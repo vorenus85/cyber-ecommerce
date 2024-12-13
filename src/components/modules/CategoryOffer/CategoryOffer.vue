@@ -94,7 +94,7 @@ const prev = () => {
   justify-content: space-between;
 }
 
-.category-offer-carousel-next {
+.category-offer-carousel-prev {
   transform: rotate(180deg);
 }
 
