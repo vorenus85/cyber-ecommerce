@@ -37,7 +37,7 @@ defineProps({ category: Object })
   left: 0;
   visibility: hidden;
   opacity: 0.3;
-  transform: scale(1, 0);
+  // transform: scale(1, 0);
   transition: var(--transition);
   background: #fff;
   border-radius: 5px;
@@ -74,7 +74,7 @@ defineProps({ category: Object })
 
 .has-unique-dropdown:hover > .category-unique-submenu,
 .category-menu-item:hover > .category-submenu {
-  transform: scale(1, 1);
+  // transform: scale(1, 1);
   visibility: visible;
   opacity: 1;
 }
