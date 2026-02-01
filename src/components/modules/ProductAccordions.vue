@@ -40,7 +40,7 @@ export default {
     const loading = ref(true)
     const error = ref(null)
 
-    const fetchProducts = async (productType) => {
+    const fetchProducts = async productType => {
       loading.value = true
 
       try {
