@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import FooterCustom from '@/components/modules/FooterCustomContent.vue'
 import Socials from '@/components/modules/Common/Socials.vue'
 import FooterInformation from '@/components/modules/FooterInformation.vue'
+import Credits from './Credits.vue'
 
 const servicesTitle = 'Services'
 const servicesMenus = ref([
@@ -27,7 +28,7 @@ const assistanceMenus = ref([
 <template>
   <section class="footer">
     <div class="container">
-      <div class="footer-rows grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="footer-rows grid grid-cols-1 md:grid-cols-3 gap-4 pb-4">
         <div class="footer-column footer-column-1 pr-10">
           <FooterCustom />
         </div>
@@ -39,8 +40,9 @@ const assistanceMenus = ref([
           <FooterInformation :title="assistanceTitle" :menus="assistanceMenus" />
         </div>
       </div>
-      <div class="mt-4">
+      <div class="mt-4 flex copyright-row">
         <Socials />
+        <Credits />
       </div>
     </div>
   </section>
@@ -51,9 +53,20 @@ const assistanceMenus = ref([
   padding: 3rem 1rem;
 }
 
+.copyright-row {
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 @media (min-width: 992px) {
   .footer {
     padding: 6.5rem 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .copyright-row {
+    flex-direction: row;
   }
 }
 </style>
@@ -64,6 +77,7 @@ const assistanceMenus = ref([
 
 .footer .module {
   margin-bottom: 0;
+  align-items: center;
 }
 
 .footer .module-head {
