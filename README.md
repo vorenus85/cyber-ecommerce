@@ -2,8 +2,6 @@
 
 **Cyber-Ecommerce** is a modern, feature-rich e-commerce **front-end application** that focuses on an intuitive and responsive shopping experience. The project showcases an e-commerce homepage and category pages built with **Vue 3, Pinia, and Tailwind CSS**, using mocked product data to simulate real-world scenarios. With a clean UI and fast performance powered by Vite, Cyber-Ecommerce demonstrates modern frontend architecture and state management best practices.
 
-## Special thank
-
 ## Features
 
 - **Built with Vue 3:** Harnesses the Composition API for modern front-end development.
